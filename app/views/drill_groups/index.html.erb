@@ -1,2 +1,8 @@
-<h1>DrillGroups#index</h1>
+<h1>DrillGroups</h1>
 
+<% @drillGroups.each do |f| %>
+
+<div>  <%= f.category %> </div>
+<div>  <%= f.description %> </div>
+<div>  <%= f.difficulty %> </div>
+<% end %>
