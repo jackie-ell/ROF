@@ -1,4 +1,4 @@
 class DrillGroup < ApplicationRecord
-  has_many :questions
-  belongs_to :user
+  has_many :questions, dependent: :nullify
+  belongs_to :user, optional: true
 end
