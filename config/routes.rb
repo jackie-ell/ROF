@@ -42,7 +42,7 @@ Rails.application.routes.draw do
 
   resources :answers, only: [:new, :create, :destroy, :index] 
   
-  resources :drill_groups, only: [:new, :create, :destroy, :index] 
+  resources :drill_groups, only: [:new, :create, :destroy, :index, :show] 
 
   resources :answers, only: [:new, :create, :destroy, :index]
 
