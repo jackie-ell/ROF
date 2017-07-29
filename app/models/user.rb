@@ -3,7 +3,9 @@ class User < ApplicationRecord
 
 
   has_many :questions, dependent: :nullify
-  has_many :badges, dependent: :nullify
+
+  has_many :badges, dependent: :destroy
+
   has_many :drills, dependent: :nullify
 
   has_many :questions
@@ -22,6 +24,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   validates :username, presence: true, uniqueness: true
+
 
   def full_name
     "#{first_name} #{last_name}"
