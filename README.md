@@ -34,7 +34,7 @@ rails g model users_question is_correct:boolean last_answer:text num_attempts:in
 
 rails g model answers body:text
 
-rails g model badge badge_name:string threshhold:string value:integer user:references
+rails g model badge badge_name:string threshhold:string value:integer #user:references
 
 #with the exception of badge, it's the migrations that hold the table associations
 
@@ -70,4 +70,12 @@ gem 'font-awesome-rails'
 ****
 migration to add title to questions table
 ****
+
 added validations to user.rb
+
+rails g model drill name user:references drill_group:references points:integer
+
+added validations to all rbs
+
+
+

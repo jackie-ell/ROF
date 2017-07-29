@@ -39,7 +39,21 @@ Rails.application.routes.draw do
     resources :user_questions, only: [:new, :create, :destroy, :index]
   end
 
+
+  resources :answers, only: [:new, :create, :destroy, :index] 
+  
+  resources :drill_groups, only: [:new, :create, :destroy, :index] 
+
   resources :answers, only: [:new, :create, :destroy, :index]
 
   resource :session, only: [:new, :create, :destroy]
+
 end
+
+
+
+
+
+
+
+

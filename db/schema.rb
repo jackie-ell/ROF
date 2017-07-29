@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729193812) do
+
+ActiveRecord::Schema.define(version: 20170729181138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +30,8 @@ ActiveRecord::Schema.define(version: 20170729193812) do
     t.bigint "user_id"
     t.string "name"
     t.string "threshold"
-    t.integer "t_value"
+
+    t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_badges_on_user_id"
@@ -43,6 +45,17 @@ ActiveRecord::Schema.define(version: 20170729193812) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "drills", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.bigint "drill_group_id"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drill_group_id"], name: "index_drills_on_drill_group_id"
+    t.index ["user_id"], name: "index_drills_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "drill_group_id"
@@ -53,6 +66,15 @@ ActiveRecord::Schema.define(version: 20170729193812) do
     t.string "title"
     t.index ["drill_group_id"], name: "index_questions_on_drill_group_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "user_badges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
+    t.index ["user_id"], name: "index_user_badges_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,9 +103,13 @@ ActiveRecord::Schema.define(version: 20170729193812) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
-  add_foreign_key "badges", "users"
+
+  add_foreign_key "drills", "drill_groups"
+  add_foreign_key "drills", "users"
   add_foreign_key "questions", "drill_groups"
   add_foreign_key "questions", "users"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
   add_foreign_key "users_questions", "questions"
   add_foreign_key "users_questions", "users"
 end
