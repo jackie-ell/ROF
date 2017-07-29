@@ -63,3 +63,11 @@ adding t.references to questions, answers, users_questions
 edited the model files to reflect associations
 
 ****
+added to GEMFILE
+
+gem 'cancancan'
+gem 'font-awesome-rails'
+****
+migration to add title to questions table
+****
+added validations to user.rb

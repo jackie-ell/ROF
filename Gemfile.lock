@@ -51,6 +51,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
+    cancancan (2.0.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -70,6 +71,8 @@ GEM
     faker (1.8.4)
       i18n (~> 0.5)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -209,11 +212,16 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.6)
   byebug
+  cancancan
   coffee-rails (~> 4.2)
   factory_girl_rails
   faker
+
   hirb
   interactive_editor
+
+  font-awesome-rails
+
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
