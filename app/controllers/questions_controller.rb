@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_drill_group, only: [:create]
-  before_action :find_question, only: [:destroy]
+  before_action :find_question, only: [:update, :destroy]
   before_action :authorize_user!, except: [:index, :show]
 
   def index
@@ -25,6 +25,17 @@ class QuestionsController < ApplicationController
 
   def show
     @questions = Question.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update question_params
+      redirect_to @question
+    else
+      render :edit, alert: @question.errors.full_messages.join(', ')
+    end
   end
 
   def destroy
