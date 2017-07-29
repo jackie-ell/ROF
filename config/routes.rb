@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #get 'welcome/index'
-  
+
   root to: 'welcome#index'
   # get 'user_questions/index'
 
@@ -34,11 +34,12 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:new, :create]
- 
+
   resources :questions, only: [:new, :create, :destroy, :index] do
     resources :user_questions, only: [:new, :create, :destroy, :index]
-  end 
+  end
 
-  resources :answers, only: [:new, :create, :destroy, :index] 
+  resources :answers, only: [:new, :create, :destroy, :index]
 
+  resource :session, only: [:new, :create, :destroy]
 end
