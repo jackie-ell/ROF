@@ -40,5 +40,14 @@ Rails.application.routes.draw do
   end 
 
   resources :answers, only: [:new, :create, :destroy, :index] 
-
+  
+  resources :drill_groups, only: [:new, :create, :destroy, :index] 
 end
+
+
+
+
+
+
+
+

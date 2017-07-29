@@ -71,3 +71,5 @@ gem 'font-awesome-rails'
 migration to add title to questions table
 ****
 added validations to user.rb
+
+rails g model drill name user:references drill_group:references points:integer
