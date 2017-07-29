@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 50db39436124a3fab7a2f38e08e17a9b42afa6cc
+  specs:
+    faker (1.8.4)
+      i18n (~> 0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,8 +75,6 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
-    faker (1.8.4)
-      i18n (~> 0.5)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -215,13 +220,10 @@ DEPENDENCIES
   cancancan
   coffee-rails (~> 4.2)
   factory_girl_rails
-  faker
-
+  faker!
+  font-awesome-rails
   hirb
   interactive_editor
-
-  font-awesome-rails
-
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener

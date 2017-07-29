@@ -1,0 +1,39 @@
+<h1>Sign Up for Code Drillz</h1>
+
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <div class="">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+  <div class="">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="">
+    <%= f.submit "Register" %>
+  </div>
+<% end %>
