@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :questions
-  has_many :badges
+  has_many :questions, dependent: :nullify
+  has_many :badges, dependent: :nullify
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true #, uniqueness: true
 
 
   def full_name
