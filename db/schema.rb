@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729201700) do
+
+ActiveRecord::Schema.define(version: 20170729181138) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +41,17 @@ ActiveRecord::Schema.define(version: 20170729201700) do
     t.string "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "drills", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.bigint "drill_group_id"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drill_group_id"], name: "index_drills_on_drill_group_id"
+    t.index ["user_id"], name: "index_drills_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -88,6 +101,8 @@ ActiveRecord::Schema.define(version: 20170729201700) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "drills", "drill_groups"
+  add_foreign_key "drills", "users"
   add_foreign_key "questions", "drill_groups"
   add_foreign_key "questions", "users"
   add_foreign_key "user_badges", "badges"

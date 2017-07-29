@@ -70,8 +70,12 @@ gem 'font-awesome-rails'
 ****
 migration to add title to questions table
 ****
+
+added validations to user.rb
+
+rails g model drill name user:references drill_group:references points:integer
+
 added validations to all rbs
 
-****Sat 11:24 pushed validations...db.seeds incomplete
 
-****redo badge model, added intersection table, users_badges
+
