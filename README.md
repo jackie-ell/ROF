@@ -70,4 +70,6 @@ gem 'font-awesome-rails'
 ****
 migration to add title to questions table
 ****
-added validations to user.rb
+added validations to all rbs
+
+****Sat 11:24 pushed validations...db.seeds incomplete
