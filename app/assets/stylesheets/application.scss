@@ -13,5 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ //Code Red D12834
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+.nav-logo {
+  max-width: 50px !important;
+  margin: 1em;
+}
+
+.margin-1-5em {
+  margin: 1.5em;
+}
+
+.bg-footer {
+  background-color: #e7e7e7;
+}
+
+.footer-links {
+  margin: 1.5em;
+}

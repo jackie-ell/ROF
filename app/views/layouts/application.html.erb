@@ -14,7 +14,7 @@
     <div>
       <!-- <nav class='navbar-navbar-default'>
         <div class='container'>
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-header">
             <li><%= link_to 'Home', root_path  %></li>
             <li>
               <%= link_to 'Log Out', session_path,
@@ -26,15 +26,30 @@
       </nav> -->
 
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
+              <!-- <img src="codecorelogo.png"> -->
+              <%= link_to root_path do %>
+                <%= image_tag 'logo/codecorelogo.png', class:"nav-logo" %>
+              <% end %>
           </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+          <ul class="nav navbar-nav pull-right margin-1-5em">
+            <!-- <li><%= link_to 'Home', root_path  %></li>
+            <li><a href="#">Page 1</a></li> -->
+            <li>
+              <%= form_tag session_path, class:"form-inline" do %>
+                <div class="form-group">
+                  <%= email_field_tag :email,"", class:'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= password_field_tag :password,"", class:'form-control' %>
+                </div>
+
+                <%= submit_tag 'SIGN IN', class:"btn btn-default" %>
+              <% end %>
+            </li>
+            <!-- <li><a href="#">Page 2</a></li> -->
+            <!-- <li><a href="#">Page 3</a></li> -->
           </ul>
         </div>
       </nav>
@@ -50,5 +65,28 @@
     <% end %>
 
     <%= yield %>
+
+    <footer class="bg-footer footer">
+      <div class="container">
+
+        <ul class="nav navbar-nav margin-1-5em">
+
+            <%= link_to root_path do %>
+              <%= image_tag 'logo/codecorelogo.png', class:"nav-logo pull-left" %>
+            <% end %>
+
+
+          <li class="footer-links">
+            <h4>Contact</h4>
+          </li>
+          <li class="footer-links">
+            <h4>Policies</h4>
+          </li>
+          <li class="footer-links">
+            <h4>Something</h4>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
