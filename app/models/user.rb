@@ -3,7 +3,8 @@ class User < ApplicationRecord
 
   has_many :questions
   has_many :user_badges, dependent: :destroy
-  has_many :answers  #admin only
+  #has_many :answers, optional: true  #admin only
+  has_many :answers
   has_many :drill_groups #admin only
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
