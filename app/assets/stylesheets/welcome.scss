@@ -16,9 +16,17 @@
 }
 
 .landing-text {
-  font-weight:bold;
-  width: 100%;
-  height: 400px;
+  justify-content:center;
+}
+
+.image-height{
+  height: 100vh;
+  align-items: center;
+}
+
+.welcome-button {
+  background-color: #D12834;
+  padding: 1em;
 }
 
 h1 {
