@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome to Code Drillz</title>
+
   </head>
   <body>
 
@@ -13,7 +13,7 @@
       <div class="container">
         <div class="landing-text">
           <h1> Code Drillz </h1>
-          <p> THE RIGHT WAY TO CODE </p>
+          <h4> THE RIGHT WAY TO CODE </h4>
           <button> GET STARTED </button>
         </div>
 
@@ -25,21 +25,17 @@
 </body>
 </html>
 
+<center>
+<h2> SIGN UP FOR THE CHALLENGE </h2>
 
-<h1>Welcome to Code Drillz</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="sign-up-container">
 
-<div class="">
-  <h3>Sign In</h3>
-  <%= render 'sessions/form' %>
+  <div class="">
+    <%= render 'users/form' %>
+  </div>
+
 </div>
+<br><br>
+</center>
 
-<div class="">
-  <h3>Sign Up</h3>
-  <%= render 'users/form' %>
-</div>
-
-
-<%= link_to 'drills', new_drill_group_path %>
-
-
+<!-- <%= link_to 'drills', new_drill_group_path %> -->

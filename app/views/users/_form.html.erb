@@ -7,31 +7,50 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-  <div class="">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :first_name, class: 'sign-up-field-title' %>
+      <%= f.text_field :first_name,  class: 'sign-up-fields' %>
+
+    </div>
   </div>
-  <div class="">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+
+      <%= f.label :last_name, class: 'sign-up-field-title' %>
+      <%= f.text_field :last_name, class: 'sign-up-fields' %>
+    </div>
   </div>
-  <div class="">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :username, class: 'sign-up-field-title' %>
+      <%= f.text_field :username, class: 'sign-up-fields' %>
+    </div>
   </div>
-  <div class="">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :email, class: 'sign-up-field-title' %>
+      <%= f.email_field :email, class: 'sign-up-fields' %>
+    </div>
   </div>
-  <div class="">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :password, class: 'sign-up-field-title' %>
+      <%= f.password_field :password, class: 'sign-up-fields' %>
+    </div>
   </div>
-  <div class="">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :password_confirmation, class: 'sign-up-field-title' %>
+      <%= f.password_field :password_confirmation, class: 'sign-up-fields'%>
+    </div>
+  </div><br><br>
+
+  <div class="sign-up-field">
+    <%= f.submit "GET STARTED",:class => 'button' %>
   </div>
-  <div class="">
-    <%= f.submit "Sign Up" %>
+
   </div>
 <% end %>
