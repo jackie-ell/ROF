@@ -1,2 +1,20 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<div class="question-show">
+  <h3><%= @question.title %></h3>
+  <p><%= @question.description %></p>
+  <p>User Id <%= @question.user_id %></p>
+  <p>Drill Group Id <%= @question.drill_group_id %></p>
+  <p>Points <%= @question.points %></p>
+  <p>Created at: <%= @question.created_at.to_formatted_s(:short) %></p>
+</div>
+<div class="answer-create">
+  <h3>Answer the Question</h3>
+  <%= form_for answers_path do |f| %>
+    <div class="">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+    <div class="">
+      <%= f.submit "Submit your Answer" %>
+    </div>
+  <% end %>
+</div>

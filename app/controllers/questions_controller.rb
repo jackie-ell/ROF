@@ -1,10 +1,11 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_drill_group, only: [:create]
+  before_action :find_drill_group, only: [:create, :index]
   before_action :find_question, only: [:update, :destroy]
   before_action :authorize_user!, except: [:index, :show]
 
   def index
+    @questions = Question.where(:)
   end
 
   def new
@@ -24,7 +25,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @questions = Question.all
+    @question = Question.find params[:id]
   end
 
   def edit
@@ -52,6 +53,7 @@ class QuestionsController < ApplicationController
   end
 
   def find_drill_group
+    
     @drill_group = DrillGroup.find(params[:drill_group_id])
   end
 
