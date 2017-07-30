@@ -1,8 +1,35 @@
 
-
-<% @questions.each do |f| %>
+<div class='container top-page-padding'>
+<!-- <% @questions.each do |f| %>
   <div>  <%= linke_to f.title,  %> </div>
-    <div>  <%= f.description %>
-    <div>  <%= f.points %> </div>
-    
-  <% end %>
+
+  <div>  <%= f.description %> </div>
+  <div>  <%= f.points %> </div>
+<% end %> -->
+<% @questions.each do |f| %>
+  <div class="col-md-12 drill-group-spacing">
+    <div class="drill-group">
+      <div class="col-sm-2">
+        <%= image_tag 'logo/ruby.gif', class:"" %>
+      </div>
+
+      <div class="col-sm-8">
+        <h3>  <%= f.title %> </h3>
+        <p>  <%= f.description %> </p>
+        <p>Points: <%= f.points %> </p>
+        <!-- <h3>Ruby Extreme Question</h3>
+        <p>Here you will learn ruby on rails</p>
+        <p>Points: 50</p> -->
+      </div>
+
+
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-default red-button top-button-margin">Enter</button>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+</div>
+
