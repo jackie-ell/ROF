@@ -72,15 +72,20 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right nav-form-spacing">
-              <li>
-                <!-- <div class="form-group nav-selections">
-                  <%= link_to 'Ranking', session_path, method: :delete, class:"" %>
-                </div> -->
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to drill_groups_path do %>
+                    <p class="form-group nav-selections">Drills</p>
+                  <% end %>
+                </li>
+              <% end %>
 
-                <%= link_to root_path do %>
-                  <p class="form-group nav-selections">Ranking</p>
+              <li>
+                <%= link_to users_path do %>
+                  <p class="form-group nav-selections">Leaderboard</p>
                 <% end %>
               </li>
+
               <li>
                 <% if user_signed_in? %>
                   <div class="form-group">
@@ -127,9 +132,7 @@
 
     <footer class="bg-footer footer">
       <div class="container">
-
         <ul class="nav navbar-nav">
-
           <li class="footer-image">
             <%= link_to root_path do %>
               <%= image_tag 'logo/codecorelogo.png', class:"nav-logo pull-left" %>
@@ -146,16 +149,6 @@
           <li class="footer-links">
             <a>About Us</a>
           </li>
-
-          <!-- <h4>CONTACT</h4>
-          <li class="footer-links">
-            <h4>POLICIES</h4>
-          </li>
-          <li class="footer-links">
-            <h4>ABOUT</h4>
-
-          </li> -->
-
         </ul>
 
         <div class="footer-icon-container">
