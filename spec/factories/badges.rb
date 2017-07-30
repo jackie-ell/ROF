@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :badge do
-    badge_name "MyString"
-    treshhold "MyString"
-    value 1
     user nil
+    name "MyString"
+    threshold "MyString"
+    t_value 1
   end
 end

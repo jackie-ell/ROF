@@ -26,11 +26,13 @@ ActiveRecord::Schema.define(version: 20170729201700) do
   end
 
   create_table "badges", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name"
-    t.string "threshhold"
+    t.string "threshold"
     t.integer "t_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
   create_table "drill_groups", force: :cascade do |t|
@@ -41,6 +43,17 @@ ActiveRecord::Schema.define(version: 20170729201700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_drill_groups_on_user_id"
+  end
+
+  create_table "drills", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.bigint "drill_group_id"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drill_group_id"], name: "index_drills_on_drill_group_id"
+    t.index ["user_id"], name: "index_drills_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -90,7 +103,9 @@ ActiveRecord::Schema.define(version: 20170729201700) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+
   add_foreign_key "drill_groups", "users"
+
   add_foreign_key "questions", "drill_groups"
   add_foreign_key "questions", "users"
   add_foreign_key "user_badges", "badges"

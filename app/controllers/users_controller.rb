@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.registration_pending_email(@user).deliver_now
       flash[:notice] = 'User Successfully Created'
-      #session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       flash[:alert] = "User fields not valid. Please fix and resubmit."
