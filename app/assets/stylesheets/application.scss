@@ -19,7 +19,6 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
- $brand-primary: orange;
 
 body {
   position: relative;
@@ -227,7 +226,7 @@ p {
 }
 @media (max-width: 1000px) {
   .footer {
-    // position: inherit;
+    position: static;
   }
 
   .nav-form-spacing {

@@ -7,11 +7,49 @@
     <%= javascript_include_tag 'application' %>
 
     <%= stylesheet_link_tag 'application',
-'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600i',
+'https://fonts.googleapis.com/css?family=Montserrat:400,500,600i',
  media: 'all', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
+
+
+
+    <!-- <div> -->
+
+      <!-- <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+              <%= link_to root_path do %>
+                <%= image_tag 'logo/codecorelogo.png', class:"nav-logo" %>
+              <% end %>
+
+              <% if user_signed_in? %>
+                <%= link_to "HELLO #{current_user.full_name.titleize}" %>
+              <% else %>
+              <% end %>
+          </div>
+          <ul class="nav navbar-nav pull-right nav-form-spacing">
+            <li>
+              <% if user_signed_in? %>
+                <div clas="form-group">
+                  <%= link_to 'LOG OUT', session_path, method: :delete, class:"btn btn-default red-button" %>
+                </div>
+              <% else %>
+                <%= form_tag session_path, class:"form-inline" do %>
+                  <div class="form-group">
+                    <%= email_field_tag :email,"", class:'form-control nav-bar-forms' %>
+                  </div>
+                  <div class="form-group">
+                    <%= password_field_tag :password,"", class:'form-control nav-bar-forms' %>
+                  </div>
+                  <%= submit_tag 'SIGN IN', class:"btn btn-default red-button" %>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </nav> -->
 
       <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
@@ -43,14 +81,8 @@
               <% end %>
 
               <li>
-                <%= link_to users_leaderboard_path do %>
-                  <p class="form-group nav-selections">Leaderboard</p>
-                <% end %>
-              </li>
-
-              <li>
                 <%= link_to users_path do %>
-                  <p class="form-group nav-selections">Users</p>
+                  <p class="form-group nav-selections">Leaderboard</p>
                 <% end %>
               </li>
 
@@ -62,10 +94,10 @@
                 <% else %>
                   <%= form_tag session_path, class:"form-inline" do %>
                     <div class="form-group">
-                      <%= email_field_tag :email, "", class:'form-control nav-bar-forms', placeholder: "Email" %>
+                      <%= email_field_tag :email,"", class:'form-control nav-bar-forms' %>
                     </div>
                     <div class="form-group">
-                      <%= password_field_tag :password,"", class:'form-control nav-bar-forms', placeholder: "Password" %>
+                      <%= password_field_tag :password,"", class:'form-control nav-bar-forms' %>
                     </div>
                     <%= submit_tag 'SIGN IN', class:"btn btn-default red-button" %>
                   <% end %>
@@ -75,7 +107,6 @@
           </div>
         </div>
       </nav>
-
 
     <% if flash[:notice] %>
       <div class='alert alert-success'>
@@ -108,7 +139,6 @@
           <li class="footer-links">
             <a>About Us</a>
           </li>
-
         </ul>
 
         <div class="footer-icon-container">

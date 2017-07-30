@@ -1,6 +1,8 @@
 
 <div class="container top-page-padding">
 
+<h1>DrillGroups</h1>
+
   <% @drillGroups.each do |f| %>
      <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div> -->
    <!-- <div>  <%= f.category %> </div>
@@ -9,8 +11,6 @@
     <div class="col-md-6 drill-group-spacing">
       <div class="drill-group">
         <div class="col-sm-3">
-
-
 
           <% x = get_first_word(f.category) %>
 
@@ -42,6 +42,12 @@
           <p> Difficulty: <%= f.difficulty %> </p>
           <p>  <%= f.description %> </p>
 
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+              <span class="sr-only">70% Complete</span>
+            </div>
+          </div>
           <!-- <h3>Ruby on Rails</h3>
           <p>Here you will learn ruby on rails</p>
           <p>description goes here</p> -->
