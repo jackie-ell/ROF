@@ -1,3 +1,20 @@
 // Place all the styles related to the drill_groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.drill-group {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 3em !important;
+  box-shadow: 3px 3px 15px #888888;
+  overflow: auto;
+}
+
+.drill-group-spacing{
+  margin: 1em 0;
+}
+
+.drill-group p {
+  color: darkgrey;
+}
