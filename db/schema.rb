@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170729201700) do
   create_table "badges", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
-    t.string "threshold"
+    t.string "threshhold"
     t.integer "t_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

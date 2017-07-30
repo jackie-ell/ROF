@@ -80,32 +80,42 @@ end
 
 #setting questions (has to be replaced)
 drill_groups.each do |dg|
+  puts dg.category
   rand(5..8).times do                #there are 5 to 8 questions per drill group
+    debug_id = Question.last ? Question.last.id.to_s : "0"
     question = Question.create(
-      title: Faker::Seinfeld.quote,
-      description: Faker::Hacker.say_something_smart,
+      title: Faker::Seinfeld.quote + debug_id,
+      description: Faker::Hacker.say_something_smart + debug_id,
       user_id: users[0].id,                    #admin Allain created this answer, necessary to not break validation   #(users.sample).id
       drill_group_id: dg.id,
       points: points_range(dg.difficulty)
     )
-    rand(1..3).times do              #there are 1 to 3 possible correct answers per question
-      Answer.create(
-        body: "this is the answer",  #this is so correct answer can be tested
-        question_id: question.id,
-        user_id: users[0].id                   #admin Allain created this answer, necessary to not break validation
-      )
-    end
+
+  end
+end
+
+questions = Question.all
+
+questions.each do |question|
+  rand(1..3).times do              #there are 1 to 3 possible correct answers per question
+    Answer.create(
+      body: "this is the answer",  #this is so correct answer can be tested
+      question_id: question.id,
+      user_id: users[0].id                   #admin Allain created this answer, necessary to not break validation
+    )
   end
 end
 
 
+
+
 #setting badges
-Badge.create name:'N00b Hacker', threshhold:'points', t_value: 500
-Badge.create name:'L33t H4cker', threshhold:'points', t_value: 1000
-Badge.create name:'ub3r3L33t H4ck3r', threshhold:'points', t_value: 1600
+Badge.create name:'N00b Hacker', threshhold:'points', t_value: 500, user_id: users[0].id
+Badge.create name:'L33t H4cker', threshhold:'points', t_value: 1000, user_id: users[0].id
+Badge.create name:'ub3r3L33t H4ck3r', threshhold:'points', t_value: 1600, user_id: users[0].id
 
 
-questions = Question.all
+
 p questions
 
 300.times do
