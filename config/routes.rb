@@ -35,25 +35,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:new, :create]
 
-  resources :questions, only: [:new, :create, :destroy, :index] do
+  resources :questions, only: [:new, :create, :destroy, :index, :show] do
     resources :user_questions, only: [:new, :create, :destroy, :index]
   end
 
 
-  resources :answers, only: [:new, :create, :destroy, :index] 
-  
-  resources :drill_groups, only: [:new, :create, :destroy, :index, :show] 
+  resources :answers, only: [:new, :create, :destroy, :index]
+
+  resources :drill_groups, only: [:new, :create, :destroy, :index, :show]
 
   resources :answers, only: [:new, :create, :destroy, :index]
 
   resource :session, only: [:new, :create, :destroy]
 
 end
-
-
-
-
-
-
-
-
