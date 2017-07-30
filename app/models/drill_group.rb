@@ -10,4 +10,6 @@ class DrillGroup < ApplicationRecord
   validates :description, presence: true
   validates :difficulty, presence: true
 
+  
+
 end
