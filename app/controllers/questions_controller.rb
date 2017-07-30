@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find params[:id]
     @users_question = UsersQuestion.find_by(user: current_user, question: @question)
+
   end
 
   def edit

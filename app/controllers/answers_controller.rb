@@ -1,8 +1,8 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!
+ # before_action :authenticate_user!
   before_action :find_question, only: [:create, :update]
   before_action :find_answer, only: [:destroy]
-  before_action :authorize_user!, except: [:show]
+ # before_action :authorize_user!, except: [:show]
 
   # These actions will not have seperate views
   # def new

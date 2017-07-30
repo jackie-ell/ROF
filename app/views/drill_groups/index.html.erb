@@ -1,8 +1,6 @@
 
 <div class="container top-page-padding">
-
 <h1>DrillGroups</h1>
-
   <% @drillGroups.each do |f| %>
      <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div> -->
    <!-- <div>  <%= f.category %> </div>
@@ -11,7 +9,14 @@
     <div class="col-md-6 drill-group-spacing">
       <div class="drill-group">
         <div class="col-sm-3">
-          <%= image_tag 'logo/ruby.gif', class:"" %>
+
+          <% if get_first_word(f.category) == 'JavaScript' %>
+            <%= image_tag 'logo/js.gif', class:"" %>
+          <% elsif get_first_word(f.category) == 'Ruby' %>
+            <%= image_tag 'logo/ruby.gif', class:"" %>
+
+          <% else %>
+          <% end %>
         </div>
         <div class="col-sm-9">
           <h3>  <%= link_to f.category, drill_group_path(f) %></h3>
