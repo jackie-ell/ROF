@@ -1,11 +1,11 @@
 class DrillGroupsController < ApplicationController
-  
+
   def index
    @drillGroups = DrillGroup.all
   end
 
   def new
-  	@drillGroups = DrillGroup.new 
+  	@drillGroups = DrillGroup.new
   end
 
   def create
@@ -20,6 +20,7 @@ class DrillGroupsController < ApplicationController
 
   def show
     @questions = Question.where(drill_group_id: params[:id])
-   
-  end 
+
+  end
+
 end
