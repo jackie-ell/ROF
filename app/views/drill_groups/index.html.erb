@@ -1,28 +1,33 @@
 
-<div class="container">
+<div class="container top-page-padding">
 
 <h1>DrillGroups</h1>
 
   <% @drillGroups.each do |f| %>
-  <div><%= link_to 'project', drill_group_path(f) %></div>
+    <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div>
     <div>  <%= f.category %> </div>
     <div>  <%= f.description %> </div>
-    <div>  <%= f.difficulty %> </div>
-  <% end %>
+    <div>  <%= f.difficulty %> </div> -->
+    <div class="col-md-6 drill-group-spacing">
+      <div class="drill-group">
+        <div class="col-sm-3">
+          <%= image_tag 'logo/ruby.gif', class:"" %>
+        </div>
+        <div class="col-sm-9">
+          <h3>  <%= link_to f.category, drill_group_path(f) %></h3>
+          <!-- <h3>  <%= f.category %> </h3> -->
+          <p> Difficulty: <%= f.difficulty %> </p>
+          <p>  <%= f.description %> </p>
 
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
+          <!-- <h3>Ruby on Rails</h3>
+          <p>Here you will learn ruby on rails</p>
+          <p>description goes here</p> -->
+          <button type="button" class="btn btn-default red-button">Enter</button>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
+
 
   <div class="col-md-6 drill-group-spacing">
     <div class="drill-group">

@@ -82,3 +82,16 @@ button {
     margin: 1em 0;
   }
 }
+
+@media (max-width: 1000px) {
+  .landing-text {
+    h1 {
+      font-size:50px !important;
+    }
+
+    h4 {
+      font-size: 30px !important;
+    }
+  }
+
+}

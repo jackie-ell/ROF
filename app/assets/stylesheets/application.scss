@@ -24,9 +24,7 @@
    color: #D12834;
  }
 
-
 .navbar{
-
   position: fixed;
   border-radius: 0;
   width: 100%;
@@ -89,7 +87,7 @@ h1 {
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 500;
     color: #D12834 !important;
-    font-size:75px !important;
+    font-size:50px !important;
     letter-spacing: 3px !important;
     text-transform: uppercase;
 
@@ -146,6 +144,7 @@ p {
 }
 
 .nav-selections {
+  transition: all 0.5s;
   margin-top: 0.5em;
   margin-right: 2.5em;
 }
@@ -161,6 +160,10 @@ p {
 
 .navbar-nav > li > a {
   padding: 0;
+}
+
+.top-page-padding {
+  padding-top: 7em;
 }
 
 .form-group {
@@ -182,7 +185,8 @@ p {
   float: right;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
+
   .nav-form-spacing {
     margin: 0;
     width: 100%;
@@ -209,5 +213,30 @@ p {
     ul {
       padding: 0;
     }
+  }
+
+  .navbar-header {
+      float: none;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
   }
 }

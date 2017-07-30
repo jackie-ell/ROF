@@ -32,11 +32,15 @@ $( document ).ready(function() {
          $('.navbar-default').css("background-color", "#f8f8f8");
          $('.navbar-default').css("border-color", "transparent");
          $('.navbar').css("box-shadow", "none");
+         $('.nav-selections').css("color", "#D12834");
+
 
          //$('#nav-bar').parent().toggleClass('change');
        } else {
          $('.navbar-default').css("background-color", "transparent");
+         $('.nav-selections').css("color", "white");
          //$('#nav-bar').parent().toggleClass('change');
+
        }
      });
   }
