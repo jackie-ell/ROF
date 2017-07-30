@@ -41,6 +41,7 @@
           <!-- <h3>  <%= f.category %> </h3> -->
           <p> Difficulty: <%= f.difficulty %> </p>
           <p>  <%= f.description %> </p>
+          <p> progess: <%= percent_complete(f, current_user) %>%</p>
 
           <div class="progress">
             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
