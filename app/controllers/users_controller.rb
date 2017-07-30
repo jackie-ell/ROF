@@ -9,10 +9,10 @@ class UsersController < ApplicationController
       UserMailer.registration_pending_email(@user).deliver_now
       flash[:notice] = 'User Successfully Created'
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to drill_groups_path
     else
       flash[:alert] = "User fields not valid. Please fix and resubmit."
-      render :new
+      redirect_to root_path
     end
   end
 

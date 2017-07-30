@@ -18,10 +18,27 @@
 $( document ).ready(function() {
 
   if($("#homepage-flag").length > 0) {
-    $('.navbar-default').css("background-color", "transparent");
     $('li p').css("color", "#D12834");
+    $('.navbar-default').css("background-color", "transparent");
     $('.navbar-default').css("border-color", "transparent");
     $('.navbar').css("box-shadow", "none");
+    $('.nav-selections').css("color", "#D12834");
+
+    var open = false;
+
+    $('.navbar-toggle').click(function(e) {
+        if(open == false) {
+          $('.navbar-default').css("background-color", "white");
+          console.log('change navbar to white');
+          $('.nav-selections').css("color", "#D12834");
+
+          open = true;
+        } else {
+          open = false;
+          $('#navbar-default').css("background-color", "transparent");
+          console.log('change navbar to transparent');
+        }
+    });
 
     // run code for homepage
     $(window).scroll(function() {
