@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170729201700) do
   create_table "badges", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
-    t.string "threshold"
+    t.string "threshhold"
     t.integer "t_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20170729201700) do
   add_foreign_key "drill_groups", "users"
   add_foreign_key "questions", "drill_groups"
   add_foreign_key "questions", "users"
+  add_foreign_key "user_badges", "badges"
   add_foreign_key "user_badges", "users"
   add_foreign_key "users_questions", "questions"
   add_foreign_key "users_questions", "users"
