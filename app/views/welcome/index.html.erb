@@ -29,17 +29,16 @@
 </body>
 </html>
 
+<% if !user_signed_in? %>
 <section class="welcome-signup-form">
   <h2> SIGN UP FOR THE CHALLENGE </h2>
-
   <div class="sign-up-container">
-
     <div class="">
       <%= render 'users/form' %>
     </div>
-
   </div>
   <br><br>
 </section>
+<% end %>
 
 <%= link_to 'drills', new_drill_group_path %>
