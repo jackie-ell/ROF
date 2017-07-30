@@ -49,6 +49,12 @@
               </li>
 
               <li>
+                <%= link_to users_path do %>
+                  <p class="form-group nav-selections">Users</p>
+                <% end %>
+              </li>
+
+              <li>
                 <% if user_signed_in? %>
                   <div class="form-group">
                     <%= link_to 'LOG OUT', session_path, method: :delete, class:"btn btn-default red-button" %>
