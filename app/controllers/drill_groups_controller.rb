@@ -28,11 +28,7 @@ class DrillGroupsController < ApplicationController
     correct = uq.where(user: user, is_correct: true, question: dg.questions).count
 
     # return Correct answers / Total questions
-    if dg.questions.count == 0
-      return 0
-    else
-      return (correct / dg.questions.count)/100
-    end
+    return ((correct.to_f / dg.questions.count)*100).round(1)
   end
   helper_method :percent_complete
 end
