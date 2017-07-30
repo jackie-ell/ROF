@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   before_action :authorize_user!, except: [:index, :show]
 
   def index
-    @questions = Question.where(:)
   end
 
   def new
@@ -53,7 +52,6 @@ class QuestionsController < ApplicationController
   end
 
   def find_drill_group
-    
     @drill_group = DrillGroup.find(params[:drill_group_id])
   end
 
