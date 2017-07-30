@@ -59,7 +59,7 @@
             <% end %>
 
             <% if user_signed_in? %>
-              <%= link_to "HELLO #{current_user.full_name.titleize}" %>
+              <%= link_to "Hello #{current_user.full_name.titleize}", user_path(current_user) %>
             <% else %>
             <% end %>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
