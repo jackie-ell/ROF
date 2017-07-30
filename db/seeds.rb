@@ -92,7 +92,7 @@ drill_groups.each do |dg|
       Answer.create(
         body: "this is the answer",  #this is so correct answer can be tested
         question_id: question.id,
-        user_id: 1                   #admin Allain created this answer, necessary to not break validation
+        user_id: users[0].id                   #admin Allain created this answer, necessary to not break validation
       )
     end
   end
