@@ -1,27 +1,29 @@
-<div class="title">
-  <h2 class="drill-h2">CREATE A DRILL GROUP</h2>
-</div>
-<br>
-<div class="add-drill-group">
+<div class="container top-page-padding" >
 
-<%= form_for @drillGroups do |f| %>
- <div> <%= f.label :category, class: 'h3'%>
-  <%= f.text_field :category, class: 'add-drill-category-field' %> </div>
+    <h2 class="drill-h2">CREATE A DRILL GROUP</h2>
+  </div>
   <br>
- <div> <%= f.label :description, class: 'h3'%><br>
-  <%= f.text_area :description, class: 'add-drill-description-field'%></div>
-<div class="h3"><br>
+  <div class="add-drill-group">
 
-  <%= f.radio_button :difficulty, "easy" %>
-  <%= f.label :difficulty_easy, "Easy" %>
-        <%= f.radio_button :difficulty, "normal" %>
-        <%= f.label :difficulty_normal, "Normal" %>
-                  <%= f.radio_button :difficulty, "hard" %>
-                  <%= f.label :difficulty_hard, "Hard" %>
-<br><br><br>
-</div>
- <div class="submit-drill-group"> <%= f.submit %></div>
-</div>
-<br><br>
+    <%= form_for @drillGroups do |f| %>
+    <div> <%= f.label :category, class: 'h3'%>
+      <%= f.text_field :category, class: 'add-drill-category-field' %> </div>
+      <br>
+      <div> <%= f.label :description, class: 'h3'%><br>
+        <%= f.text_area :description, class: 'add-drill-description-field'%></div>
+        <div class="h3"><br>
 
-<% end %>
+          <%= f.radio_button :difficulty, "easy" %>
+          <%= f.label :difficulty_easy, "Easy" %>
+          <%= f.radio_button :difficulty, "normal" %>
+          <%= f.label :difficulty_normal, "Normal" %>
+          <%= f.radio_button :difficulty, "hard" %>
+          <%= f.label :difficulty_hard, "Hard" %>
+          <br><br><br>
+
+        <%= f.submit class: 'btn-default red-button' %>
+      </div>
+      <br><br>
+
+      <% end %>
+    </div>
