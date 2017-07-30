@@ -16,38 +16,28 @@
 
           <% case x %>
           <% when "JavaScript"  %>
-          <%= image_tag 'logo/javascript.gif', class:"" %>
+          <%= image_tag 'logo/javascript.png', class:"" %>
           <% when "Ruby" %>
-          <%= image_tag 'logo/ruby.gif', class:"" %>
+          <%= image_tag 'logo/ruby.png', class:"" %>
           <% when "RoR" %>
-          <%= image_tag 'logo/rails.gif', class:"" %>
+          <%= image_tag 'logo/rails.png', class:"" %>
           <% when 'Python' %>
-          <%= image_tag 'logo/python.gif', class:""  %>
+          <%= image_tag 'logo/python.png', class:""  %>
           <% when 'Node' %>
-          <%= image_tag 'logo/node.gif', class:"" %>
+          <%= image_tag 'logo/node.png', class:"" %>
           <% when 'HTML'  %>
-          <%= image_tag 'logo/html.gif', class:"" %>
+          <%= image_tag 'logo/html.png', class:"" %>
           <% when 'CSS' %>
-          <%= image_tag 'logo/css.gif', class:"" %>
-          <% when 'Sass'%>
-          <%= image_tag 'logo/sass.gif', class:"" %>
+          <%= image_tag 'logo/css.png', class:"" %>
+          <% when 'jQuery'%>
+          <%= image_tag 'logo/jquery.png', class:"" %>
           <% else %>
+          <%= image_tag 'logo/default.png', class:"" %>
           <% end %>
 
-          <!-- <% if get_first_word(f.category) == 'JavaScript' %>
-            <%= image_tag 'logo/js.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'Ruby' %>
-            <%= image_tag 'logo/ruby.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'Python' %>
-            <%= image_tag 'logo/python.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'RoR' %>
-          <%= image_tag 'logo/rails.gif', class:"" %>
-          <% else %> -->
-
-          <!-- <% end %> -->
         </div>
         <div class="col-sm-9">
-          <h3>  <%= link_to f.category, drill_group_path(f) %></h3>
+          <h3>  <%= link_to truncate(f.category, length: 20), drill_group_path(f) %></h3>
           <!-- <h3>  <%= f.category %> </h3> -->
           <p> Difficulty: <%= f.difficulty %> </p>
           <p>  <%= f.description %> </p>
@@ -60,77 +50,6 @@
       </div>
     </div>
   <% end %>
-
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
 
 
 </div>

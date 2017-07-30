@@ -1,9 +1,12 @@
+<div class="container top-page-padding">
+
 <% @users.each do |f| %>
   <div class="col-md-12 drill-group-spacing">
     <div class="drill-group">
       <div class="col-sm-2">
         
       </div>
+
 
       <div class="col-sm-8">
 
@@ -15,5 +18,64 @@
       <div class="col-sm-2">
         
     </div>
+
+
+  <div class="leaderboard-container">
+
+
+  <table id="ranking-table">
+  <tr>
+    <th>Rank</th>
+    <th>User</th>
+    <th>Points</th>
+    <th>Badges</th>
+  </tr>
+  <tr>
+    <td> 1 </td>
+    <td>Smith</td>
+    <td>1,200</td>
+    <td>16</td>
+  </tr>
+  <tr>
+    <td> 2 </td>
+    <td>Jackson</td>
+    <td>900</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td> 3 </td>
+    <td>Doe</td>
+    <td>100</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td> 4 </td>
+    <td>Doe</td>
+    <td>100</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Doe</td>
+    <td>100</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <div class="highlight-rank">
+    <td>MY RANK </td>
+    <td>MY USERNAME</td>
+    <td>0</td>
+    <td>0</td>
+    </div>
+  </tr>
+
+</table>
+
+    </div>
+
+    <hr>
+</div>
+
   </div>
 <% end %>
+
