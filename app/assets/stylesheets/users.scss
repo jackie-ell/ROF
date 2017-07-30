@@ -2,6 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+table, th, td {
+    border: 0px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 70px;
+    text-align: left;
+}
+
+th{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  font-size:20px !important;
+  letter-spacing: 2px !important;
+}
+
+
+td{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size:12px !important;
+  letter-spacing: 1px !important;
+  padding-top: 2em !important;
+   padding-bottom: 2em !important;
+}
+
+#ranking-table {
+    width: 80%;
+}
+
 
 .sign-up-container {
   width: 60%;
@@ -59,4 +90,48 @@ input, select, textarea{
   .sign-up-container {
     width: 90%;
   }
+}
+
+
+h2 {
+  display: inline;
+  align-self: baseline;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  color: #D12834 !important;
+  font-size:30px !important;
+  letter-spacing: 3px !important;
+}
+
+h3 {
+  padding-left: 65px;
+  display: inline;
+  align-self: baseline;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  color: #D12834 !important;
+  font-size:20px !important;
+  letter-spacing: 3px !important;
+}
+
+.highlight-rank {
+      color: #D12834 !important;
+}
+
+.leaderboard-container{
+  display:inline-flex;
+  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  margin-left: 20%;
+}
+
+.rank {
+  display: inline;
+  margin-bottom: 15px;
 }
