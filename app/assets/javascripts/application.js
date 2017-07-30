@@ -16,7 +16,7 @@
 //= require_tree .
 
 $( document ).ready(function() {
-
+  
   if($("#homepage-flag").length > 0) {
     $('.navbar-default').css("background-color", "transparent");
     $('li p').css("color", "#D12834");
