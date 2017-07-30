@@ -3,6 +3,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def leaderboard
+  end
+
   def show
     @user = User.find(params[:id])
     @users_question = UsersQuestion.where(user: @user)
@@ -20,6 +23,8 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+
+
 
   private
 
