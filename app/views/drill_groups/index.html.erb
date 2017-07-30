@@ -1,6 +1,8 @@
 
 <div class="container top-page-padding">
 
+<h1>DrillGroups</h1>
+
   <% @drillGroups.each do |f| %>
      <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div> -->
    <!-- <div>  <%= f.category %> </div>
@@ -9,42 +11,7 @@
     <div class="col-md-6 drill-group-spacing">
       <div class="drill-group">
         <div class="col-sm-3">
-
-
-
-          <% x = get_first_word(f.category) %>
-
-          <% case x %>
-          <% when "JavaScript"  %>
-          <%= image_tag 'logo/javascript.gif', class:"" %>
-          <% when "Ruby" %>
           <%= image_tag 'logo/ruby.gif', class:"" %>
-          <% when "RoR" %>
-          <%= image_tag 'logo/rails.gif', class:"" %>
-          <% when 'Python' %>
-          <%= image_tag 'logo/python.gif', class:""  %>
-          <% when 'Node' %>
-          <%= image_tag 'logo/node.gif', class:"" %>
-          <% when 'HTML'  %>
-          <%= image_tag 'logo/html.gif', class:"" %>
-          <% when 'CSS' %>
-          <%= image_tag 'logo/css.gif', class:"" %>
-          <% when 'Sass'%>
-          <%= image_tag 'logo/sass.gif', class:"" %>
-          <% else %>
-          <% end %>
-
-          <!-- <% if get_first_word(f.category) == 'JavaScript' %>
-            <%= image_tag 'logo/js.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'Ruby' %>
-            <%= image_tag 'logo/ruby.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'Python' %>
-            <%= image_tag 'logo/python.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'RoR' %>
-          <%= image_tag 'logo/rails.gif', class:"" %>
-          <% else %> -->
-
-          <!-- <% end %> -->
         </div>
         <div class="col-sm-9">
           <h3>  <%= link_to f.category, drill_group_path(f) %></h3>
@@ -52,6 +19,12 @@
           <p> Difficulty: <%= f.difficulty %> </p>
           <p>  <%= f.description %> </p>
 
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+              <span class="sr-only">70% Complete</span>
+            </div>
+          </div>
           <!-- <h3>Ruby on Rails</h3>
           <p>Here you will learn ruby on rails</p>
           <p>description goes here</p> -->
