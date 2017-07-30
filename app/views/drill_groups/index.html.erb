@@ -4,6 +4,7 @@
 <h1>DrillGroups</h1>
 
   <% @drillGroups.each do |f| %>
+  <div><%= link_to 'project', drill_group_path(f) %></div>
     <div>  <%= f.category %> </div>
     <div>  <%= f.description %> </div>
     <div>  <%= f.difficulty %> </div>
