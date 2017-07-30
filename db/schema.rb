@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20170729201700) do
   add_foreign_key "drill_groups", "users"
   add_foreign_key "questions", "drill_groups"
   add_foreign_key "questions", "users"
+  add_foreign_key "user_badges", "badges"
   add_foreign_key "user_badges", "users"
   add_foreign_key "users_questions", "questions"
   add_foreign_key "users_questions", "users"
