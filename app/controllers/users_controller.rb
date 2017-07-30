@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
-   
+
   def index
     @users = User.all
-  end  
-  
+  end
+
   def new
     @user = User.new
   end
 
   def leaderboard
+    @users = User.order(total_pts: :desc)
   end
 
   def show
