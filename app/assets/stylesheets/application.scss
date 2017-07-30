@@ -18,6 +18,13 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+h3 {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+footer {
+  margin-top: 3em;
+}
 
 .nav-logo {
   max-width: 50px !important;
