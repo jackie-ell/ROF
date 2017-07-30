@@ -1,20 +1,26 @@
-<div class="question-show">
-  <h3><%= @question.title %></h3>
-  <p><%= @question.description %></p>
-  <p>User Id <%= @question.user_id %></p>
-  <p>Drill Group Id <%= @question.drill_group_id %></p>
-  <p>Points <%= @question.points %></p>
-  <p>Created at: <%= @question.created_at.to_formatted_s(:short) %></p>
-</div>
-<div class="answer-create">
-  <h3>Answer the Question</h3>
-  <%= form_for answers_path do |f| %>
-    <div class="">
-      <%= f.label :body %>
-      <%= f.text_area :body %>
+
+<div class="container">
+  <section class="question-show-margin">
+    <div class="question-show">
+      <h2><%= @question.title %></h2>
+      <p><%= @question.description %></p>
+      <p>User Id <%= @question.user_id %></p>
+      <p>Drill Group Id <%= @question.drill_group_id %></p>
+      <p>Points <%= @question.points %></p>
+      <p>Created at: <%= @question.created_at.to_formatted_s(:short) %></p>
     </div>
-    <div class="">
-      <%= f.submit "Submit your Answer" %>
-    </div>
-  <% end %>
+  </section>
+  <div class="answer-create">
+    <h3>Write your answer here!</h3>
+    <%= form_for answers_path do |f| %>
+      <div class="">
+        <!-- <%= f.label :body %> -->
+        <%= f.text_area :body, class:'form-control nav-bar-forms' %>
+      </div>
+      <div class="">
+        <%= f.submit "Submit", class:'btn btn-default red-button top-button-margin' %>
+      </div>
+    <% end %>
+  </div>
+
 </div>

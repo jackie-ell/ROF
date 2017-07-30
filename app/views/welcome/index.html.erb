@@ -6,6 +6,8 @@
 
   </head>
   <body>
+    <span id="homepage-flag" style="display: none"></span>
+
 
     <div class="background-img">
       &nbsp;  &nbsp;  &nbsp;
@@ -15,7 +17,7 @@
           <div class="landing-text">
             <h1> Code Drillz </h1>
             <h4> THE RIGHT WAY TO CODE </h4>
-            <button class="welcome-button"> GET STARTED </button>
+            <button class="welcome-button top-button-margin"> GET STARTED </button>
           </div>
         </div>
 
@@ -27,17 +29,17 @@
 </body>
 </html>
 
-<center>
-<h2> SIGN UP FOR THE CHALLENGE </h2>
+<section class="welcome-signup-form">
+  <h2> SIGN UP FOR THE CHALLENGE </h2>
 
-<div class="sign-up-container">
+  <div class="sign-up-container">
 
-  <div class="">
-    <%= render 'users/form' %>
+    <div class="">
+      <%= render 'users/form' %>
+    </div>
+
   </div>
-
-</div>
-<br><br>
-</center>
+  <br><br>
+</section>
 
 <%= link_to 'drills', new_drill_group_path %>
