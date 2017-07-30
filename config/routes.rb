@@ -42,7 +42,10 @@ Rails.application.routes.draw do
 
   resources :answers, only: [:new, :create, :destroy, :index]
 
-  resources :drill_groups, only: [:new, :create, :destroy, :index, :show]
+# create questions routes 
+  resources :drill_groups, only: [:new, :create, :destroy, :index, :show] do
+   resources :questions, only: [:new, :create, :destroy, :index, :show]
+  end 
 
 
   resource :session, only: [:new, :create, :destroy]
