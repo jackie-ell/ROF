@@ -26,8 +26,15 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
+  before_save :set_defaults
 
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def set_defaults
+    self.total_pts = 0
+    self.is_admin = false
+  end
+
 end
