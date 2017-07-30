@@ -14,24 +14,12 @@
   <body>
 
 
-    <div>
-      <!-- <nav class='navbar-navbar-default'>
-        <div class='container'>
-          <ul class="nav navbar-header">
-            <li><%= link_to 'Home', root_path  %></li>
-            <li>
-              <%= link_to 'Log Out', session_path,
-              method: :delete,
-              data: {confirm: 'Logout?'} %>
-            </li>
-          </ul>
-        </div>
-      </nav> -->
 
-      <nav class="navbar navbar-default">
+    <!-- <div> -->
+
+      <!-- <nav class="navbar navbar-default">
         <div class="container">
           <div class="navbar-header">
-              <!-- <img src="codecorelogo.png"> -->
               <%= link_to root_path do %>
                 <%= image_tag 'logo/codecorelogo.png', class:"nav-logo" %>
               <% end %>
@@ -39,17 +27,13 @@
               <% if user_signed_in? %>
                 <%= link_to "HELLO #{current_user.full_name.titleize}" %>
               <% else %>
-                <!-- <%= link_to 'Sign in', new_session_path %> -->
-                <!-- <%= link_to 'Sign Up', new_user_path %> -->
               <% end %>
           </div>
-          <ul class="nav navbar-nav pull-right margin-1-5em">
-            <!-- <li><%= link_to 'Home', root_path  %></li>
-            <li><a href="#">Page 1</a></li> -->
+          <ul class="nav navbar-nav pull-right nav-form-spacing">
             <li>
               <% if user_signed_in? %>
                 <div clas="form-group">
-                  <%= link_to 'LOG OUT', session_path, method: :delete, class:"btn btn-default nav-redbuttons" %>
+                  <%= link_to 'LOG OUT', session_path, method: :delete, class:"btn btn-default red-button" %>
                 </div>
               <% else %>
                 <%= form_tag session_path, class:"form-inline" do %>
@@ -59,17 +43,67 @@
                   <div class="form-group">
                     <%= password_field_tag :password,"", class:'form-control nav-bar-forms' %>
                   </div>
-                  <%= submit_tag 'SIGN IN', class:"btn btn-default nav-redbuttons" %>
+                  <%= submit_tag 'SIGN IN', class:"btn btn-default red-button" %>
                 <% end %>
               <% end %>
             </li>
-            <!-- <li><a href="#">Page 2</a></li> -->
-            <!-- <li><a href="#">Page 3</a></li> -->
           </ul>
+        </div>
+      </nav> -->
+
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <%= link_to root_path do %>
+              <%= image_tag 'logo/codecorelogo.png', class:"nav-logo" %>
+            <% end %>
+
+            <% if user_signed_in? %>
+              <%= link_to "HELLO #{current_user.full_name.titleize}" %>
+            <% else %>
+            <% end %>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right nav-form-spacing">
+              <li>
+                <!-- <div class="form-group nav-selections">
+                  <%= link_to 'Ranking', session_path, method: :delete, class:"" %>
+                </div> -->
+
+                <%= link_to root_path do %>
+                  <p class="form-group nav-selections">Ranking</p>
+                <% end %>
+              </li>
+              <li>
+                <% if user_signed_in? %>
+                  <div class="form-group">
+                    <%= link_to 'LOG OUT', session_path, method: :delete, class:"btn btn-default red-button" %>
+                  </div>
+                <% else %>
+                  <%= form_tag session_path, class:"form-inline" do %>
+                    <div class="form-group">
+                      <%= email_field_tag :email,"", class:'form-control nav-bar-forms' %>
+                    </div>
+                    <div class="form-group">
+                      <%= password_field_tag :password,"", class:'form-control nav-bar-forms' %>
+                    </div>
+                    <%= submit_tag 'SIGN IN', class:"btn btn-default red-button" %>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
 
-    </div>
+    <!-- </div> -->
 <!--
     <% if user_signed_in? %>
       <%= link_to "Hello #{current_user.full_name.titleize}" %>
@@ -96,21 +130,47 @@
 
         <ul class="nav navbar-nav">
 
+          <li class="footer-image">
             <%= link_to root_path do %>
               <%= image_tag 'logo/codecorelogo.png', class:"nav-logo pull-left" %>
             <% end %>
+          </li>
 
 
           <li class="footer-links">
-            <p>Contact</p>
+            <a>Contact</a>
           </li>
           <li class="footer-links">
-            <p>Policies</p>
+            <a>Policies</a>
           </li>
           <li class="footer-links">
-            <p>About Us</p>
+            <a>About Us</a>
           </li>
+
+          <!-- <h4>CONTACT</h4>
+          <li class="footer-links">
+            <h4>POLICIES</h4>
+          </li>
+          <li class="footer-links">
+            <h4>ABOUT</h4>
+
+          </li> -->
+
         </ul>
+
+        <div class="footer-icon-container">
+          <ul>
+            <li class="footer-icons">
+              <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+            </li>
+            <li class="footer-icons">
+              <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </li>
+            <li class="footer-icons">
+              <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>

@@ -35,9 +35,11 @@ td{
 
 
 .sign-up-container {
-  width: 60%;
-  padding-top: 100px;
-  padding-bottom: 15px;
+  width: 70%;
+  padding: 3em;
+  margin: 0 auto;
+  // padding-top: 100px;
+  // padding-bottom: 15px;
   box-shadow: 3px 3px 15px #888888;
 }
 
@@ -48,8 +50,11 @@ td{
   font-weight: 400;
   font-size:13px !important;
   letter-spacing: 1px !important;
-  padding-bottom: 50px;
-  width: 60%;
+  // padding-bottom: 50px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 2em;
 }
 
 .sign-up-fields {
@@ -66,7 +71,7 @@ td{
   float:left;
   color:#D12834;
   position:absolute;
-  padding-bottom: 2px;
+  // padding-bottom: 2px;
   text-transform: uppercase;
 }
 
@@ -89,6 +94,10 @@ input, select, textarea{
 @media (max-width: 800px) {
   .sign-up-container {
     width: 90%;
+    padding:1em;
+  }
+
+  .sign-up-field {
   }
 }
 

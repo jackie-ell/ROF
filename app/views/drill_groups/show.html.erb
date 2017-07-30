@@ -1,0 +1,28 @@
+
+<div class='container top-page-padding'>
+
+
+
+<% @questions.each do |f| %>
+  <div class="col-md-12 drill-group-spacing">
+    <div class="drill-group">
+      <div class="col-sm-2">
+        <%= image_tag 'logo/ruby.gif', class:"" %>
+      </div>
+
+      <div class="col-sm-8">
+    
+        <p>  <%= f.description %> </p>
+        <p>Points: <%= f.points %> </p>
+      </div>
+
+
+      <div class="col-sm-2">
+       <!--  <button type="button" class="btn btn-default red-button top-button-margin">Enter</button> -->
+        <%= button_to 'Enter',  question_path(f) , method: :get, class: "btn btn-default red-button top-button-margin"%>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
