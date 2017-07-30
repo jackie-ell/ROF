@@ -16,6 +16,10 @@
 }
 
 .landing-text {
+  h1 {
+    font-size:90px !important;
+    text-shadow: 1px 1px 75px black;
+  }
   justify-content:center;
 }
 
@@ -67,5 +71,27 @@ button {
   letter-spacing: 5px;
   border: none;
   background-color: #D12834;
+
+}
+
+.welcome-signup-form {
+  text-align: center;
+  margin: 5em 0;
+
+  h2 {
+    margin: 1em 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .landing-text {
+    h1 {
+      font-size:50px !important;
+    }
+
+    h4 {
+      font-size: 30px !important;
+    }
+  }
 
 }

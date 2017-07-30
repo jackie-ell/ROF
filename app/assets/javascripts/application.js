@@ -14,3 +14,35 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require_tree .
+
+$( document ).ready(function() {
+
+  if($("#homepage-flag").length > 0) {
+    $('.navbar-default').css("background-color", "transparent");
+    $('li p').css("color", "#D12834");
+    $('.navbar-default').css("border-color", "transparent");
+    $('.navbar').css("box-shadow", "none");
+
+    // run code for homepage
+    $(window).scroll(function() {
+     currentScroll = $(window).scrollTop();
+
+       //nav is cleared at the top
+       if(currentScroll > 300) {
+         $('.navbar-default').css("background-color", "#f8f8f8");
+         $('.navbar-default').css("border-color", "transparent");
+         $('.navbar').css("box-shadow", "none");
+         $('.nav-selections').css("color", "#D12834");
+
+
+         //$('#nav-bar').parent().toggleClass('change');
+       } else {
+         $('.navbar-default').css("background-color", "transparent");
+         $('.nav-selections').css("color", "white");
+         //$('#nav-bar').parent().toggleClass('change');
+
+       }
+     });
+  }
+
+});
