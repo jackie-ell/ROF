@@ -52,7 +52,6 @@ class QuestionsController < ApplicationController
   end
 
   def find_drill_group
-
     @drill_group = DrillGroup.find(params[:drill_group_id])
   end
 
