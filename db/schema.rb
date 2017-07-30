@@ -36,11 +36,13 @@ ActiveRecord::Schema.define(version: 20170729201700) do
   end
 
   create_table "drill_groups", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "category"
     t.text "description"
     t.string "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_drill_groups_on_user_id"
   end
 
   create_table "drills", force: :cascade do |t|
@@ -101,9 +103,9 @@ ActiveRecord::Schema.define(version: 20170729201700) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
-  add_foreign_key "badges", "users"
-  add_foreign_key "drills", "drill_groups"
-  add_foreign_key "drills", "users"
+
+  add_foreign_key "drill_groups", "users"
+
   add_foreign_key "questions", "drill_groups"
   add_foreign_key "questions", "users"
   add_foreign_key "user_badges", "badges"

@@ -18,7 +18,7 @@
     <div>
       <!-- <nav class='navbar-navbar-default'>
         <div class='container'>
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-header">
             <li><%= link_to 'Home', root_path  %></li>
             <li>
               <%= link_to 'Log Out', session_path,
@@ -30,29 +30,89 @@
       </nav> -->
 
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
+              <!-- <img src="codecorelogo.png"> -->
+              <%= link_to root_path do %>
+                <%= image_tag 'logo/codecorelogo.png', class:"nav-logo" %>
+              <% end %>
+
+              <% if user_signed_in? %>
+                <%= link_to "HELLO #{current_user.full_name.titleize}" %>
+              <% else %>
+                <!-- <%= link_to 'Sign in', new_session_path %> -->
+                <!-- <%= link_to 'Sign Up', new_user_path %> -->
+              <% end %>
           </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+          <ul class="nav navbar-nav pull-right margin-1-5em">
+            <!-- <li><%= link_to 'Home', root_path  %></li>
+            <li><a href="#">Page 1</a></li> -->
+            <li>
+              <% if user_signed_in? %>
+                <div clas="form-group">
+                  <%= link_to 'LOG OUT', session_path, method: :delete, class:"btn btn-default nav-redbuttons" %>
+                </div>
+              <% else %>
+                <%= form_tag session_path, class:"form-inline" do %>
+                  <div class="form-group">
+                    <%= email_field_tag :email,"", class:'form-control nav-bar-forms' %>
+                  </div>
+                  <div class="form-group">
+                    <%= password_field_tag :password,"", class:'form-control nav-bar-forms' %>
+                  </div>
+                  <%= submit_tag 'SIGN IN', class:"btn btn-default nav-redbuttons" %>
+                <% end %>
+              <% end %>
+            </li>
+            <!-- <li><a href="#">Page 2</a></li> -->
+            <!-- <li><a href="#">Page 3</a></li> -->
           </ul>
         </div>
       </nav>
 
     </div>
-
+<!--
     <% if user_signed_in? %>
       <%= link_to "Hello #{current_user.full_name.titleize}" %>
       <%= link_to 'Log Out', session_path, method: :delete%>
     <% else %>
       <%= link_to 'Sign in', new_session_path %>
       <%= link_to 'Sign Up', new_user_path %>
+    <% end %> -->
+
+    <% if flash[:notice] %>
+      <div class='alert alert-success'>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class='alert alert-danger'>
+        <%= flash[:alert] %>
+      </div>
     <% end %>
 
     <%= yield %>
+
+    <footer class="bg-footer footer">
+      <div class="container">
+
+        <ul class="nav navbar-nav">
+
+            <%= link_to root_path do %>
+              <%= image_tag 'logo/codecorelogo.png', class:"nav-logo pull-left" %>
+            <% end %>
+
+
+          <li class="footer-links">
+            <h4>Contact</h4>
+          </li>
+          <li class="footer-links">
+            <h4>Policies</h4>
+          </li>
+          <li class="footer-links">
+            <h4>Something</h4>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
