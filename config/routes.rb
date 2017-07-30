@@ -44,8 +44,11 @@ Rails.application.routes.draw do
 
   resources :drill_groups, only: [:new, :create, :destroy, :index, :show]
 
-  resources :answers, only: [:new, :create, :destroy, :index]
 
   resource :session, only: [:new, :create, :destroy]
+
+   resources :questions, only: [] do
+    resources :answers, only: [:new, :create, :destroy, :index]
+  end
 
 end
