@@ -13,7 +13,7 @@
   </section>
   <div class="answer-create">
     <h3>Write your answer here!</h3>
-    <%= form_for answers_path do |f| %>
+    <%= form_for question_user_questions_path do |f| %>
       <div class="">
         <!-- <%= f.label :body %> -->
         <%= f.text_area :body, class:'form-control nav-bar-forms' %>
@@ -25,4 +25,3 @@
   </div>
 
 </div>
-
