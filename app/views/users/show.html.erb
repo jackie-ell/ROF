@@ -1,0 +1,22 @@
+<br>
+<br>
+<h1>User page</h1>
+
+<%= @user.username %>
+<%= @user.first_name %> <%= @user.last_name %>
+
+Points: <%= @user.total_pts %>
+
+<br>
+<% if @users_question.present? %>
+  <% @users_question.each do |attempt| %>
+    <%= attempt.question.drill_group.description %>
+    <br>
+    <%= attempt.question.description %>
+    <br>
+    <%= attempt.last_answer %>
+    <br>
+    <%= attempt.question.points %>
+    <hr>
+  <% end %>
+<% end %>
