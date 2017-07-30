@@ -1,3 +1,50 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.background-img{
+   display:flex;
+   background-image: url("LandingBg1.jpg");
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 700px;
+   background-size: cover;
+  background-position: center;
+
+
+}
+
+.landing-text {
+  font-weight:bold;
+  border: 1px solid black;
+  width: 100%;
+  height: 400px;
+}
+
+h1 {
+    z-index:100;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500;
+    color: #D12834 !important;
+    font-size:90px !important;
+    letter-spacing: 3px !important;
+}
+
+p {
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size:25px !important;
+  letter-spacing: 5px !important;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size:16px;
+  letter-spacing: 5px;
+  border: none;
+  background-color: #D12834;
+
+}
