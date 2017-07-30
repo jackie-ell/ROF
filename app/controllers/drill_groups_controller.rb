@@ -19,5 +19,7 @@ class DrillGroupsController < ApplicationController
   end
 
   def show
+    @questions = Question.where(drill_group_id: params[:id])
+    
   end 
 end
