@@ -78,13 +78,25 @@
                     <p class="form-group nav-selections">Drills</p>
                   <% end %>
                 </li>
+                <li>
+                  <%= link_to users_leaderboard_path do %>
+                    <p class="form-group nav-selections">Leaderboard</p>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to users_path do %>
+                    <p class="form-group nav-selections">Users</p>
+                  <% end %>
+                </li>
               <% end %>
+
 
               <li>
                 <%= link_to users_path do %>
                   <p class="form-group nav-selections">Leaderboard</p>
                 <% end %>
               </li>
+
 
               <li>
                 <% if user_signed_in? %>
