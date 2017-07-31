@@ -16,22 +16,25 @@ DrillGroup.destroy_all
 User.destroy_all
 
 #setting at least one admin
-User.create first_name:'Allain', last_name:'Era', username:'aera', email:'aera@quiz.edu', password:PASSWORD, is_admin:true
-User.create first_name:'Jackie', last_name:'Ell', username:'jell', email:'jell@quiz.edu', password:PASSWORD, is_admin:true
-User.create first_name:'Jacky', last_name:'Chui', username:'jchui', email:'jcui@quiz.edu', password:PASSWORD, is_admin:true
+User.create first_name:'Allain', last_name:'Era', username:'aera', email:'aera@quiz.edu', password:PASSWORD, is_admin:true, total_pts: rand(1..1000)
+User.create first_name:'Jackie', last_name:'Ell', username:'jell', email:'jell@quiz.edu', password:PASSWORD, is_admin:true, total_pts: rand(1..1000)
+User.create first_name:'Jacky', last_name:'Chui', username:'jchui', email:'jcui@quiz.edu', password:PASSWORD, is_admin:true, total_pts: rand(1..1000)
+User.create first_name:'Colin', last_name:'Hire', username:'chire', email:'colin@hire.ca', password: "hello", is_admin:true, total_pts: rand(1..1000)
 
 #setting non-admin users
 10.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   username = (first_name[0] + last_name).downcase
+  points = rand(1..1000)
   User.create(
     first_name: first_name,
     last_name: last_name,
     username: username,
     email: "#{username}@example.com",
     password: PASSWORD,
-    is_admin: false
+    is_admin: false,
+    total_pts: points
   )
 end
 

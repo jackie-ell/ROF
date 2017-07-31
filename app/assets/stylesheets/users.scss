@@ -17,6 +17,7 @@ th{
   font-weight: 500;
   font-size:20px !important;
   letter-spacing: 2px !important;
+  text-align: center !important;
 }
 
 
@@ -27,6 +28,7 @@ td{
   letter-spacing: 1px !important;
   padding-top: 2em !important;
    padding-bottom: 2em !important;
+   text-align: center;
 }
 
 #ranking-table {
@@ -124,7 +126,7 @@ input, select, textarea{
 // }
 
 .highlight-rank {
-      color: #D12834 !important;
+  background-color: gainsboro;
 }
 
 .leaderboard-container{

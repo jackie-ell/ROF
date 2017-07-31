@@ -2,7 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.add-new-question {
+  width: 85%;
+  margin-left: 21%;
+}
+.question-h2 {
+    display:flex;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size:26px !important;
+}
 
+.question-title{
+    width: 60%;
+    height: 20px;
+}
+
+.question-description {
+    width: 60%;
+    height: 150px;
+}
+
+.points {
+  width: 60%;
+  height: auto;
+}
 
 .question-show {
   overflow: auto;
@@ -56,4 +80,26 @@
   p {
     color: white;
   }
+}
+
+.question-show-margin {
+  padding-top: 7em;
+}
+
+.question-fields{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300 !important;
+  font-size:12px !important;
+  letter-spacing: 1px !important;
+  text-decoration: none;
+}
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
 }
