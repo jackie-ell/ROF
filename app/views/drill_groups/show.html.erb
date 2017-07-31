@@ -8,7 +8,26 @@
   <div class="col-md-12 drill-group-spacing">
     <div class="drill-group">
       <div class="col-sm-2">
+        <% case @logocat %>
+        <% when "JavaScript"  %>
+        <%= image_tag 'logo/javascript.png', class:"" %>
+        <% when "Ruby" %>
         <%= image_tag 'logo/ruby.png', class:"" %>
+        <% when "RoR" %>
+        <%= image_tag 'logo/rails.png', class:"" %>
+        <% when 'Python' %>
+        <%= image_tag 'logo/python.png', class:""  %>
+        <% when 'Node' %>
+        <%= image_tag 'logo/node.png', class:"" %>
+        <% when 'HTML'  %>
+        <%= image_tag 'logo/html.png', class:"" %>
+        <% when 'CSS' %>
+        <%= image_tag 'logo/css.png', class:"" %>
+        <% when 'jQuery'%>
+        <%= image_tag 'logo/jquery.png', class:"" %>
+        <% else %>
+        <%= image_tag 'logo/default.png', class:"" %>
+        <% end %>
       </div>
 
       <div class="col-sm-8">
