@@ -11,14 +11,10 @@
 <div class="container top-page-padding">
   <div class="title-container">
     <h1>DrillGroups</h1>
-    <%= link_to 'Create DrillGroup', new_drill_group_path, class: "btn btn-default red-button top-button-margin" %>
+    <% if current_user.is_admin %>
+      <%= link_to 'Create DrillGroup', new_drill_group_path, class: "btn btn-default red-button top-button-margin" %>
+    <% end %>
   </div>
-
-
-<% if current_user.is_admin %>
-<button class="btn btn-default"> <%= link_to 'Create DrillGroup', new_drill_group_path %> </button>
-<% end %>
-
 
   <div class="group-container">
 
@@ -59,7 +55,7 @@
           <h3>  <%= truncate(f.category.upcase, length: 20) %></h3>
           <!-- <h3>  <%= f.category %> </h3> -->
           <p> Difficulty: <%= f.difficulty %> </p>
-          <p>  <%= f.description %> </p>
+          <p>  <%= truncate(f.description, length: 33) %> </p>
           <p> progess: <%= percent_complete(f, current_user) %>%</p>
 
           <div class="progress">
