@@ -16,13 +16,14 @@
 //= require_tree .
 
 $( document ).ready(function() {
-  
+
   if($("#homepage-flag").length > 0) {
     $('li p').css("color", "#D12834");
     $('.navbar-default').css("background-color", "transparent");
     $('.navbar-default').css("border-color", "transparent");
     $('.navbar').css("box-shadow", "none");
-    $('.nav-selections').css("color", "#D12834");
+    $('.nav-selections').css("color", "white");
+    $('.navbar-header a').css("color", "white");
 
     var open = false;
 
