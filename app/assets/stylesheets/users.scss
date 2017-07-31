@@ -130,21 +130,23 @@ h3 {
 }
 
 .leaderboard-container{
-  display:inline-flex;
+  display:flex;
   justify-content: center;
-  width: 80%;
-  margin-left: 10%;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .title {
   padding-top: 30px;
-  margin-left: 17%;
   overflow: auto;
 }
 
 .rank {
   display: inline;
   margin-bottom: 15px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
