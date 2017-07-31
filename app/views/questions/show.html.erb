@@ -1,42 +1,66 @@
 
 
-<div class="container">
-  <section class="question-show-margin">
-    <div class="question-show">
-      <h2><%= @question.title %></h2>
-      <p><%= @question.description %></p>
-      <p>User Id <%= @question.user_id %></p>
-      <p>Drill Group Id <%= @question.drill_group_id %></p>
-      <p>Points <%= @question.points %></p>
-      <p>Created at: <%= @question.created_at.to_formatted_s(:short) %></p>
+<div class="container top-page-padding">
+  <div class='drill-group'>
+    <section>
+      <div class="question-show">
+        <h2><%= @question.title %></h2>
+        <p><%= @question.description %></p>
+        <!-- <p>User Id <%= @question.user_id %></p> -->
+        <!-- <p>Drill Group Id <%= @question.drill_group_id %></p> -->
+        <p>Points: <%= @question.points %></p>
+        <p>Created at: <%= @question.created_at.to_formatted_s(:short) %></p>
+      </div>
+    </section>
+    <div class="answer-create">
+
+      <%if @users_question.is_correct == false %>
+      <h3>Write your answer here!</h3>
+        <% if @users_question.present?%>
+          <%= form_tag question_users_question_path(@question), method: :patch do %>
+            <div class="">
+              <%= text_area_tag :body, nil, class: 'form-control nav-bar-forms' %>
+            </div>
+            <div class="">
+              <%= submit_tag "Submit", class:'btn btn-default red-button top-button-margin' %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= form_tag question_users_questions_path(@question) do %>
+            <div class="">
+              <%= text_area_tag :body, nil, class: 'form-control nav-bar-forms' %>
+            </div>
+            <div class="">
+              <%= submit_tag "Submit", class:'btn btn-default red-button top-button-margin' %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
-  </section>
-  <div class="answer-create">
-    <h3>Write your answer here!</h3>
 
-    <% if @users_question.present?%>
-      <%= form_tag question_users_question_path(@question), method: :patch do %>
-        <div class="">
-          <%= text_area_tag :body, nil, class: 'form-control nav-bar-forms' %>
+    <% if @users_question.present? %>
+      <%if @users_question.is_correct == true %>
+        <p class="correct">You are RIGHT!</p>
+        <div class="answer-box-you">
+          <span class="answer-result">Your answer:</span> <p><%= @users_question.last_answer %><p>
         </div>
-        <div class="">
-          <%= submit_tag "Submit", class:'btn btn-default red-button top-button-margin' %>
+
+        <div class="answer-box">
+          <span class="answer-result">Correct Answers:</span>
+          <% @users_question.question.answers.each do |ans| %>
+            <p><%= ans.body %></p>
+          <% end %>
+        <div>
+      <% elsif @users_question.is_correct == false %>
+
+        <p class="wrong">Your answer was incorrect</p>
+        <div class="answer-box-wrong">
+          <span class="answer-result">Your answer:</span> <p><%= @users_question.last_answer %><p>
         </div>
       <% end %>
-    <% else %>
-      <%= form_tag question_users_questions_path(@question) do %>
-        <div class="">
-          <%= text_area_tag :body, nil, class: 'form-control nav-bar-forms' %>
-        </div>
-        <div class="">
-          <%= submit_tag "Submit", class:'btn btn-default red-button top-button-margin' %>
-        </div>
-      <% end %>
-
     <% end %>
+    <!-- <% if @users_question.present? %>
+      <%= @users_question.is_correct %>
+    <% end %> -->
   </div>
-  
-  <% if @users_question.present? %>
-    <%= @users_question.is_correct %>
-  <% end %>
 </div>

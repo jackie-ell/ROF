@@ -4,30 +4,27 @@
 
   <div class="add-new-question">
     <div class="question-fields">
+
       
-      <%= form_for @question do |f| %>
+
+      <%= form_tag [@drill_group, @question] do %>
+
       <div>
-        <%= f.label :title %><br>
-        <%= f.text_field :title, class: 'question-title' %>
+        <%= label_tag :title %><br>
+        <%= text_field_tag :title, nil, class: 'question-title' %>
       </div>
 
       <div><br>
-        <%= f.label :description %><br>
-        <%= f.text_area :description, class: 'question-description' %>
+        <%= label_tag :description %><br>
+        <%= text_area_tag :description, nil, class: 'question-description' %>
       </div>
 
       <div>
-        <%= f.label :points %><br>
-        <%= f.number_field :points, placeholder: '# Enter number here',class: 'points' %>
+        <%= label_tag :points %><br>
+        <%= number_field_tag :points, nil, placeholder: '# Enter number here',class: 'points' %>
       </div>
 
-      <div>
-        <%= f.submit "GET STARTED",class: 'btn btn-default red-button top-button-margin' %>
-      </div>
 
-      <% end %>
-
-      <%#------------ dynamic solution form is below --------%>
 
 
       <div class="container">
@@ -35,7 +32,6 @@
           <div class="control-group" id="fields">
             <label class="control-label" for="field1">Solutions</label>
             <div class="controls">
-              <form role="form" autocomplete="off">
                 <div class="entry input-group col-xs-3">
 
                   <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
@@ -44,14 +40,28 @@
                       <span class="glyphicon glyphicon-plus"></span>
                     </button>
                   </span>
-                </div>
-              </form>
-              <br>
-              <small>Press <span class="glyphicon glyphicon-plus gs"></span> to add another solution </small>
+
+              </div>
             </div>
+          <br>
+          <small>Press <span class="glyphicon glyphicon-plus gs"></span> to add another solution </small>
+
           </div>
         </div>
       </div>
+
+
+      <div>
+        <%= submit_tag "GET STARTED", class: 'btn btn-default red-button top-button-margin' %>
+      </div>
+
+
+      <% end %>
+
+      <%#------------ dynamic solution form is below --------%>
+
+
+
 
     </div>
   </div>

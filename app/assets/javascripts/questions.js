@@ -1,10 +1,13 @@
+
+
 $(function()
 {
     $(document).on('click', '.btn-add', function(e)
     {
         e.preventDefault();
 
-        var controlForm = $('.controls form:first'),
+
+        var controlForm = $('.controls'),
             currentEntry = $(this).parents('.entry:first'),
             newEntry = $(currentEntry.clone()).appendTo(controlForm);
 
@@ -13,6 +16,7 @@ $(function()
             .removeClass('btn-add').addClass('btn-remove')
             .removeClass('btn-success').addClass('btn-danger')
             .html('<span class="glyphicon glyphicon-minus"></span>');
+            debugger
     }).on('click', '.btn-remove', function(e)
     {
 		$(this).parents('.entry:first').remove();

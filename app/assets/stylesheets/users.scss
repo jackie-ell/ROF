@@ -17,6 +17,7 @@ th{
   font-weight: 500;
   font-size:20px !important;
   letter-spacing: 2px !important;
+  text-align: center !important;
 }
 
 
@@ -27,6 +28,7 @@ td{
   letter-spacing: 1px !important;
   padding-top: 2em !important;
    padding-bottom: 2em !important;
+   text-align: center;
 }
 
 #ranking-table {
@@ -102,29 +104,29 @@ input, select, textarea{
 }
 
 
-h2 {
-  display: inline;
-  align-self: baseline;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 500;
-  color: #D12834 !important;
-  font-size:30px !important;
-  letter-spacing: 3px !important;
-}
-
-h3 {
-  // padding-left: 65px;
-  display: inline;
-  align-self: baseline;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 500;
-  color: #D12834 !important;
-  font-size:20px !important;
-  letter-spacing: 3px !important;
-}
+// h2 {
+//   display: inline;
+//   align-self: baseline;
+//   font-family: 'Montserrat', sans-serif !important;
+//   font-weight: 500;
+//   color: #D12834 !important;
+//   font-size:30px !important;
+//   letter-spacing: 3px !important;
+// }
+//
+// h3 {
+//   // padding-left: 65px;
+//   display: inline;
+//   align-self: baseline;
+//   font-family: 'Montserrat', sans-serif !important;
+//   font-weight: 500;
+//   color: #D12834 !important;
+//   font-size:20px !important;
+//   letter-spacing: 3px !important;
+// }
 
 .highlight-rank {
-      color: #D12834 !important;
+  background-color: gainsboro;
 }
 
 .leaderboard-container{
