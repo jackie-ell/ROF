@@ -1,4 +1,5 @@
 class DrillGroup < ApplicationRecord
+  include DrillGroupsHelper
 
   has_many :questions, dependent: :nullify
   belongs_to :user, optional: true
@@ -10,6 +11,6 @@ class DrillGroup < ApplicationRecord
   validates :description, presence: true
   validates :difficulty, presence: true
 
-  
+
 
 end

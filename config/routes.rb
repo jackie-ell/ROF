@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-   resources :questions, only: [] do
+  resources :questions, only: [] do
     resources :answers, only: [:new, :create, :destroy, :index]
   end
 

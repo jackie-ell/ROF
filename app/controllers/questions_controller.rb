@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_drill_group, only: [:create, :index]
+  before_action :find_drill_group, only: [:new, :create, :index]
   before_action :find_question, only: [:update, :destroy]
   before_action :authorize_user!, except: [:index, :show]
 
@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @question.answers.build
   end
 
   def create
@@ -24,7 +25,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-  
+
     @question = Question.find params[:id]
     @users_question = UsersQuestion.find_by(user: current_user, question: @question)
 
