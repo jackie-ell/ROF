@@ -4,20 +4,21 @@
 
   <div class="add-new-question">
     <div class="question-fields">
-      <%= form_tag [@drill_group, @question] do %>
+
+      <%= form_for [@drill_group, @question] do |f| %>
       <div>
-        <%= label_tag :title %><br>
-        <%= text_field_tag :title, nil, class: 'question-title' %>
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class: 'question-title' %>
       </div>
 
       <div><br>
-        <%= label_tag :description %><br>
-        <%= text_area_tag :description, nil, class: 'question-description' %>
+        <%= f.label :description %><br>
+        <%= f.text_area :description, class: 'question-description' %>
       </div>
 
       <div>
-        <%= label_tag :points %><br>
-        <%= number_field_tag :points, nil, placeholder: '# Enter number here',class: 'points' %>
+        <%= f.label :points %><br>
+        <%= f.number_field :points, placeholder: '# Enter number here',class: 'points' %>
       </div>
 
 
@@ -48,7 +49,10 @@
 
 
       <div>
-        <%= submit_tag "GET STARTED", class: 'btn btn-default red-button top-button-margin' %>
+
+        <%= f.submit "GET STARTED", class: 'btn btn-default red-button top-button-margin' %>
+
+
       </div>
 
 

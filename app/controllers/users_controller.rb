@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.order(:username)
   end
 
   def new
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def leaderboard
-    @users = User.order(total_pts: :desc)
+    @users = User.order(total_pts: :desc).limit(10)
     @rank = 0
   end
 

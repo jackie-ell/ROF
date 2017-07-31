@@ -1,8 +1,9 @@
 <div class="container top-page-padding">
   <div class="title">
-    <img class="rank" src="<%= asset_path( 'Champion.png' ) %>" width="44px", height="44px"/>
+    <img class="rank" src="<%= asset_path( 'trophy.png' ) %>" width="44px", height="44px"/>
     <h2>Leaderboard</h2>
     </img>
+    <%= link_to "View All Users", users_path, class: "btn btn-default red-button top-button-margin pull-right" %>
   </div>
   <div class="leaderboard-container">
     <table id="ranking-table">
@@ -32,4 +33,5 @@
       </tbody>
     </table>
   </div>
+
 </div>
