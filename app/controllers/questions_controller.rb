@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
     @question.answers.build
   end
 
-  def create 
+  def create
     @question = Question.new question_params
     @question.drill_group = @drill_group
     @question.user = current_user
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
       answers.each do |ans|
         Answer.create(body: ans, question: @question)
       end
-      redirect_to @question
+      redirect_to drill_group_path(@question.drill_group_id)
     else
       render :new, alert: @question.errors.full_messages.join(', ')
     end
