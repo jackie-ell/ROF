@@ -37,7 +37,7 @@
 
         </div>
         <div class="col-sm-9">
-          <h3>  <%= link_to truncate(f.category, length: 20), drill_group_path(f) %></h3>
+          <h3>  <%= truncate(f.category.upcase, length: 20) %></h3>
           <!-- <h3>  <%= f.category %> </h3> -->
           <p> Difficulty: <%= f.difficulty %> </p>
           <p>  <%= f.description %> </p>
@@ -52,7 +52,7 @@
           <!-- <h3>Ruby on Rails</h3>
           <p>Here you will learn ruby on rails</p>
           <p>description goes here</p> -->
-          <button type="button" class="btn btn-default red-button">Enter</button>
+          <%= link_to 'Enter', drill_group_path(f), class: 'btn btn-default red-button' %>
         </div>
       </div>
     </div>
