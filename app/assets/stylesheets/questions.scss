@@ -32,6 +32,56 @@
   overflow: auto;
 }
 
+.correct {
+  color: green !important;
+}
+
+.wrong {
+  color: red !important;
+}
+
+.answer-result {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.answer-box {
+  box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+  background-color: #598e59;
+
+  p {
+    color: white;
+  }
+}
+
+.answer-box-you {
+  box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+  background-color: grey;
+  margin-bottom: 1em;
+
+  p {
+    color: white;
+  }
+}
+
+.answer-box-wrong {
+  box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+  background-color: #D12834;
+  margin-bottom: 1em;
+
+  p {
+    color: white;
+  }
+}
+
 .question-show-margin {
   padding-top: 7em;
 }

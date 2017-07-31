@@ -17,7 +17,11 @@
           <div class="landing-text">
             <h1> Code Drillz </h1>
             <h4> THE RIGHT WAY TO CODE </h4>
-            <button class="welcome-button top-button-margin"> GET STARTED </button>
+           <% if !user_signed_in? %>
+              <button class="welcome-button top-button-margin", id="get-started"> GET STARTED </button>
+            <% else %>
+              <%= link_to 'Get Started', drill_groups_path, class: "btn btn-default red-button top-button-margin" %>
+            <% end %>
           </div>
         </div>
 
@@ -31,12 +35,14 @@
 
 <% if !user_signed_in? %>
 <section class="welcome-signup-form">
+  <div id="sign-up">
   <h2> SIGN UP FOR THE CHALLENGE </h2>
-  <div class="sign-up-container">
+ <div class="sign-up-container">
     <div class="">
       <%= render 'users/form' %>
     </div>
   </div>
+</div>
 </section>
 
 <% end %>

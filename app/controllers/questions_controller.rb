@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
     @question.answers.build
   end
 
-  def create
+  def create 
     @question = Question.new question_params
     @question.drill_group = @drill_group
     @question.user = current_user

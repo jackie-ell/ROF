@@ -1,73 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Leaderboard </title>
-  </head>
-  <body>
-
-    <div class="title">
-
+<div class="container top-page-padding">
+  <div class="title">
     <img class="rank" src="<%= asset_path( 'Champion.png' ) %>" width="44px", height="44px"/>
-    &nbsp; &nbsp; &nbsp; &nbsp; <h2> Leaderboard </h2>
-  </img>
-
-
-    </div>
-
+    <h2>Leaderboard</h2>
+    </img>
+  </div>
   <div class="leaderboard-container">
-
-
-  <table id="ranking-table">
-  <tr>
-    <th>Position</th>
-    <th>User</th>
-    <th>Points</th>
-    <th>Badges</th>
-  </tr>
-  <tr>
-    <td> 1 </td>
-    <td>Smith</td>
-    <td>1,200</td>
-    <td>16</td>
-  </tr>
-  <tr>
-    <td> 2 </td>
-    <td>Jackson</td>
-    <td>900</td>
-    <td>8</td>
-  </tr>
-  <tr>
-    <td> 3 </td>
-    <td>Doe</td>
-    <td>100</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td> 4 </td>
-    <td>Doe</td>
-    <td>100</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>Doe</td>
-    <td>100</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <div class="highlight-rank">
-    <td>MY RANK </td>
-    <td>MY USERNAME</td>
-    <td>0</td>
-    <td>0</td>
-    </div>
-  </tr>
-
-</table>
-
-    </div>
-    <hr>
-
-  </body>
-</html>
+    <table id="ranking-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Total Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <% if user == current_user %>
+          <tr class="highlight-rank">
+            <td><%= @rank+=1 %></td>
+            <td><%= link_to "#{user.username}", user_path(user) %></td>
+            <td><%= user.total_pts %></td>
+          </tr>
+        <% else %>
+          <tr>
+            <td><%= @rank+=1 %></td>
+            <td><%= link_to "#{user.username}", user_path(user) %></td>
+            <td><%= user.total_pts %></td>
+          </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
