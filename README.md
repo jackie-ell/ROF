@@ -15,5 +15,7 @@ To login as an administrator, please use the following Email and Password:
 
           jcui@quiz.edu   password: 12345 
 
-Brought to you by Team : Rails on Fire
-Members: Allain, Amir, Sani, Jackie Ell, Jackie Chui, Collin 
+Brought to you by Team
+🔥 🔥 🔥 🔥 🔥 Rails on Fire 🔥 🔥 🔥 🔥 🔥
+
+Members: Allain, Amir, Sani, Jackie Ell, Jackie Chui, Collin, Srinivas
