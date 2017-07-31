@@ -17,7 +17,14 @@ class QuestionsController < ApplicationController
     @question.drill_group = @drill_group
     @question.user = current_user
 
+    answers = params[:fields]
+
+
+
     if @question.save
+      answers.each do |ans|
+        Answer.create(body: ans, question: @question)
+      end
       redirect_to @question
     else
       render :new, alert: @question.errors.full_messages.join(', ')
