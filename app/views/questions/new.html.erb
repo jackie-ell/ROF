@@ -4,7 +4,11 @@
 
   <div class="add-new-question">
     <div class="question-fields">
+
+      
+
       <%= form_tag [@drill_group, @question] do %>
+
       <div>
         <%= label_tag :title %><br>
         <%= text_field_tag :title, nil, class: 'question-title' %>
