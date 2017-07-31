@@ -77,15 +77,19 @@ button {
 .welcome-signup-form {
   text-align: center;
   padding-top: 4em;
-    padding-bottom: 7em;
+  padding-bottom: 12em;
 
   h2 {
     margin: 1em 0;
-    display: block;
+    // display: block;
   }
 }
 
 @media (max-width: 1000px) {
+
+  .welcome-signup-form {
+    padding-bottom: 5em;
+  }
   .landing-text {
     h1 {
       font-size:50px !important;
