@@ -616,16 +616,19 @@ Badge.create name:'ub3r3L33t H4ck3r', threshhold:'points', t_value: 1600, user_i
 
 
 p questions
-
-300.times do
-  UsersQuestion.create(
+500.times do
+  uq = UsersQuestion.new(
     user_id: (users.sample).id,
     question_id: (questions.sample).id,
     last_answer: "this is the answer",
     is_correct: true,
     num_attempts: rand(1..10)
   )
+  if uq.valid?
+    uq.save
+  end
 end
+
 
 answers = Answer.all
 puts "Created #{users.count} users"
