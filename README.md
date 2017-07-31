@@ -1,5 +1,3 @@
-CODE DRILLZ
-
 * This application is called Code Drillz. Intended for rigorous training and learning purposes,
   Code Drillz allows students to challenge a series of questions in a drill group set. 
   These questions are related to varying coding topics created by an administrator.
