@@ -14,7 +14,16 @@
     <%= link_to 'Create DrillGroup', new_drill_group_path, class: "btn btn-default red-button top-button-margin" %>
   </div>
 
+
+<h1>DrillGroups</h1>
+
+<% if current_user.is_admin %>
+<button class="btn btn-default"> <%= link_to 'Create DrillGroup', new_drill_group_path %> </button>
+<% end %>
+
+
   <div class="group-container">
+
   <% @drillGroups.each do |f| %>
      <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div> -->
    <!-- <div>  <%= f.category %> </div>
