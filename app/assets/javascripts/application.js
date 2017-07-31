@@ -65,7 +65,7 @@ $( document ).ready(function() {
   $("#get-started").click(function() {
       $('html, body').animate({
           scrollTop: $("#sign-up").offset().top
-      }, 2000);
+      }, 800);
   });
 
 

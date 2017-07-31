@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+div.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .add-drill-group {
   width: 85%;
@@ -51,7 +55,7 @@
   padding-left: 3em;
   padding-right: 3em;
   padding-bottom: 4.5em;
-  box-shadow: 3px 3px 15px #888888;
+  box-shadow: 3px 3px 15px #a9a9a9;
   overflow: auto;
 }
 
