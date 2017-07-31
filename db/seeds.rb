@@ -595,15 +595,6 @@ drill_groups = DrillGroup.all
 p DrillGroup
 p drill_groups
 
-def points_range(difficulty)  #method called below to give a range of points per difficulty level
-  if difficulty == 'easy'
-    return rand(10..25)
-  elsif difficulty == 'normal'
-    return rand(30..50)
-  else
-    return rand(60..100)
-  end
-end
 
 questions = Question.all
 
