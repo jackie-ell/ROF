@@ -9,6 +9,11 @@ that allows the student to see their rank among other students.
 To start this project, please run:
 
      `rails db:create rails db:migrate rails db:seed `
+     
+     
+To login as an administrator, please use the following Email and Password: 
 
-Brought to you by, Team : Rails on Fire
+          jcui@quiz.edu   password: 12345 
+
+Brought to you by Team : Rails on Fire
 Members: Allain, Amir, Sani, Jackie Ell, Jackie Chui, Collin 
