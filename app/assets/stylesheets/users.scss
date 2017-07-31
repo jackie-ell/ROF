@@ -1,0 +1,156 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table, th, td {
+    border: 0px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 70px;
+    text-align: left;
+}
+
+th{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  font-size:20px !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+}
+
+
+td{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size:12px !important;
+  letter-spacing: 1px !important;
+  padding-top: 2em !important;
+   padding-bottom: 2em !important;
+   text-align: center;
+}
+
+#ranking-table {
+    width: 80%;
+}
+
+
+.sign-up-container {
+  width: 70%;
+  padding: 3em;
+  margin: 0 auto;
+  // padding-top: 100px;
+  // padding-bottom: 15px;
+  box-shadow: 3px 3px 15px #a9a9a9;
+}
+
+.sign-up-field{
+  display:inline-block;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size:13px !important;
+  letter-spacing: 1px !important;
+  // padding-bottom: 50px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 2em;
+}
+
+.sign-up-fields {
+  margin-top: 40px;
+  border: 0px;
+  width: 100%;
+  border-bottom: 2px solid red;
+  outline-width: 0;
+  text-align: left;
+
+}
+
+.sign-up-field-title {
+  float:left;
+  color:#D12834;
+  position:absolute;
+  // padding-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif ;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-size:16px;
+  letter-spacing: 3px;
+  border: none;
+  background-color: #D12834;
+  width: 200px;
+
+}
+
+input, select, textarea{
+    color: #000000;
+}
+
+@media (max-width: 800px) {
+  .sign-up-container {
+    width: 90%;
+    padding:1em;
+  }
+
+  .sign-up-field {
+  }
+}
+
+
+// h2 {
+//   display: inline;
+//   align-self: baseline;
+//   font-family: 'Montserrat', sans-serif !important;
+//   font-weight: 500;
+//   color: #D12834 !important;
+//   font-size:30px !important;
+//   letter-spacing: 3px !important;
+// }
+//
+// h3 {
+//   // padding-left: 65px;
+//   display: inline;
+//   align-self: baseline;
+//   font-family: 'Montserrat', sans-serif !important;
+//   font-weight: 500;
+//   color: #D12834 !important;
+//   font-size:20px !important;
+//   letter-spacing: 3px !important;
+// }
+
+.highlight-rank {
+  background-color: gainsboro;
+}
+
+.leaderboard-container{
+  display:flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  padding-top: 30px;
+  overflow: auto;
+}
+
+.rank {
+  display: inline;
+  margin-bottom: 15px;
+}
+
+.inline {
+  display:inline;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}

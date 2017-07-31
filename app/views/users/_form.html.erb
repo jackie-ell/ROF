@@ -1,0 +1,56 @@
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :first_name, class: 'sign-up-field-title' %>
+      <%= f.text_field :first_name,  class: 'sign-up-fields' %>
+
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+
+      <%= f.label :last_name, class: 'sign-up-field-title' %>
+      <%= f.text_field :last_name, class: 'sign-up-fields' %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :username, class: 'sign-up-field-title' %>
+      <%= f.text_field :username, class: 'sign-up-fields' %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :email, class: 'sign-up-field-title' %>
+      <%= f.email_field :email, class: 'sign-up-fields' %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :password, class: 'sign-up-field-title' %>
+      <%= f.password_field :password, class: 'sign-up-fields' %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="sign-up-field">
+      <%= f.label :password_confirmation, class: 'sign-up-field-title' %>
+      <%= f.password_field :password_confirmation, class: 'sign-up-fields'%>
+    </div>
+  </div><br><br>
+
+  <div class="">
+    <%= f.submit "GET STARTED",class: 'btn btn-default red-button top-button-margin' %>
+  </div>
+
+  </div>
+<% end %>

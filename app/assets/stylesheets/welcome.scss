@@ -1,0 +1,103 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.background-img{
+   display:flex;
+   background-image: url("LandingBg1.jpg");
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+
+
+}
+
+.landing-text {
+  h1 {
+    font-size:90px !important;
+    text-shadow: 1px 1px 75px black;
+  }
+  justify-content:center;
+}
+
+.image-height{
+  height: 100vh;
+  align-items: center;
+}
+
+.welcome-button {
+  background-color: #D12834;
+  padding: 1em;
+}
+
+h1 {
+    z-index:100;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500;
+    color: #D12834 !important;
+    font-size:90px !important;
+    letter-spacing: 3px !important;
+}
+
+h2 {
+  z-index:100;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  color: #D12834 !important;
+  font-size:30px !important;
+  letter-spacing: 3px !important;
+}
+
+h4 {
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size:16px !important;
+  letter-spacing: 1px !important;
+}
+
+p {
+
+}
+
+button {
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size:16px;
+  letter-spacing: 5px;
+  border: none;
+  background-color: #D12834;
+
+}
+
+.welcome-signup-form {
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 12em;
+
+  h2 {
+    margin: 1em 0;
+    // display: block;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .welcome-signup-form {
+    padding-bottom: 5em;
+  }
+  .landing-text {
+    h1 {
+      font-size:50px !important;
+    }
+
+    h4 {
+      font-size: 30px !important;
+    }
+  }
+
+}

@@ -1,0 +1,93 @@
+
+
+<style>
+.progress-bar-purple {
+      background-color: purple !important;
+}
+</style>
+
+
+
+<div class="container top-page-padding">
+  <div class="title-container">
+    <h1>DrillGroups</h1>
+    <%= link_to 'Create DrillGroup', new_drill_group_path, class: "btn btn-default red-button top-button-margin" %>
+  </div>
+
+
+<% if current_user.is_admin %>
+<button class="btn btn-default"> <%= link_to 'Create DrillGroup', new_drill_group_path %> </button>
+<% end %>
+
+
+  <div class="group-container">
+
+  <% @drillGroups.each do |f| %>
+     <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div> -->
+   <!-- <div>  <%= f.category %> </div>
+    <div>  <%= f.description %> </div>
+    <div>  <%= f.difficulty %> </div> -->
+    <div class="col-md-6 drill-group-spacing">
+      <div class="drill-group">
+        <div class="col-sm-3">
+
+          <% x = get_first_word(f.category) %>
+
+          <% case x %>
+          <% when "JavaScript"  %>
+          <%= image_tag 'logo/javascript.png', class:"" %>
+          <% when "Ruby" %>
+          <%= image_tag 'logo/ruby.png', class:"" %>
+          <% when "RoR" %>
+          <%= image_tag 'logo/rails.png', class:"" %>
+          <% when 'Python' %>
+          <%= image_tag 'logo/python.png', class:""  %>
+          <% when 'Node' %>
+          <%= image_tag 'logo/node.png', class:"" %>
+          <% when 'HTML'  %>
+          <%= image_tag 'logo/html.png', class:"" %>
+          <% when 'CSS' %>
+          <%= image_tag 'logo/css.png', class:"" %>
+          <% when 'jQuery'%>
+          <%= image_tag 'logo/jquery.png', class:"" %>
+          <% else %>
+          <%= image_tag 'logo/default.png', class:"" %>
+          <% end %>
+
+        </div>
+        <div class="col-sm-9">
+          <h3>  <%= truncate(f.category.upcase, length: 20) %></h3>
+          <!-- <h3>  <%= f.category %> </h3> -->
+          <p> Difficulty: <%= f.difficulty %> </p>
+          <p>  <%= f.description %> </p>
+          <p> progess: <%= percent_complete(f, current_user) %>%</p>
+
+          <div class="progress">
+
+           <% if (percent_complete(f, current_user) >= 40) %>
+           <% classtype = "success" %>
+           <% elsif (percent_complete(f, current_user) > 25) %>
+           <% classtype = "info" %>
+            <% elsif (percent_complete(f, current_user) > 13) %>
+           <% classtype = "warning" %>
+           <% else %>
+           <% classtype = "danger" %>
+           <% end %>
+
+            <div class="progress-bar progress-bar-<%=classtype%>" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width: <%= percent_complete(f, current_user)%>%">
+              <span class="sr-only"><%= percent_complete(f, current_user) %>% Complete</span>
+            </div>
+          </div>
+          <!-- <h3>Ruby on Rails</h3>
+          <p>Here you will learn ruby on rails</p>
+          <p>description goes here</p> -->
+          <%= link_to 'Enter', drill_group_path(f), class: 'btn btn-default red-button' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    </div>
+
+
+</div>
