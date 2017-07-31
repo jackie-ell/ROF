@@ -1,0 +1,37 @@
+<div class="container top-page-padding">
+  <div class="title">
+    <img class="rank" src="<%= asset_path( 'trophy.png' ) %>" width="44px", height="44px"/>
+    <h2>Leaderboard</h2>
+    </img>
+    <%= link_to "View All Users", users_path, class: "btn btn-default red-button top-button-margin pull-right" %>
+  </div>
+  <div class="leaderboard-container">
+    <table id="ranking-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Total Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <% if user == current_user %>
+          <tr class="highlight-rank">
+            <td><%= @rank+=1 %></td>
+            <td><%= link_to "#{user.username}", user_path(user) %></td>
+            <td><%= user.total_pts %></td>
+          </tr>
+        <% else %>
+          <tr>
+            <td><%= @rank+=1 %></td>
+            <td><%= link_to "#{user.username}", user_path(user) %></td>
+            <td><%= user.total_pts %></td>
+          </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
