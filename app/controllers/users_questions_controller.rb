@@ -13,6 +13,7 @@ class UsersQuestionsController < ApplicationController
     # Check for correct answer
     if @users_question.question.answers.find_by(body: @users_question.last_answer)
       @users_question.is_correct = true
+      @users_question.user.total_pts += @question.points
     else
       @users_question.is_correct = false
     end
@@ -31,6 +32,7 @@ class UsersQuestionsController < ApplicationController
 
     if @users_question.question.answers.find_by(body: @users_question.last_answer)
       @users_question.is_correct = true
+      @users_question.user.total_pts += @question.points
     else
       @users_question.is_correct = false
     end

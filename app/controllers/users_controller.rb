@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
+  end
+
+  def leaderboard
+    @users = User.order(total_pts: :desc)
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @users_question = UsersQuestion.where(user: @user)
   end
 
   def create
@@ -9,12 +23,13 @@ class UsersController < ApplicationController
       UserMailer.registration_pending_email(@user).deliver_now
       flash[:notice] = 'User Successfully Created'
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to drill_groups_path
     else
       flash[:alert] = "User fields not valid. Please fix and resubmit."
-      render :new
+      redirect_to root_path
     end
   end
+
 
   private
 

@@ -31,9 +31,10 @@ Rails.application.routes.draw do
   # get 'questions/show'
 
   # get 'questions/destroy'
+  get 'users/leaderboard'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [:new, :create, :index]
+  resources :users, only: [:new, :create, :index, :show]
 
   resources :questions, only: [:new, :create, :destroy, :index, :show] do
     resources :users_questions, only: [:create, :update]
@@ -42,7 +43,10 @@ Rails.application.routes.draw do
 
   resources :answers, only: [:new, :create, :destroy, :index]
 
-  resources :drill_groups, only: [:new, :create, :destroy, :index, :show]
+# create questions routes
+  resources :drill_groups, only: [:new, :create, :destroy, :index, :show] do
+   resources :questions, only: [:new, :create, :destroy, :index, :show]
+  end
 
 
   resource :session, only: [:new, :create, :destroy]

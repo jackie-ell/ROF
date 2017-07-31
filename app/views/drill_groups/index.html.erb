@@ -1,6 +1,8 @@
 
 <div class="container top-page-padding">
+
 <h1>DrillGroups</h1>
+
   <% @drillGroups.each do |f| %>
      <!-- <div>  <%= link_to 'project', drill_group_path(f) %></div> -->
    <!-- <div>  <%= f.category %> </div>
@@ -10,99 +12,51 @@
       <div class="drill-group">
         <div class="col-sm-3">
 
-          <% if get_first_word(f.category) == 'JavaScript' %>
-            <%= image_tag 'logo/js.gif', class:"" %>
-          <% elsif get_first_word(f.category) == 'Ruby' %>
-            <%= image_tag 'logo/ruby.gif', class:"" %>
+          <% x = get_first_word(f.category) %>
 
+          <% case x %>
+          <% when "JavaScript"  %>
+          <%= image_tag 'logo/javascript.png', class:"" %>
+          <% when "Ruby" %>
+          <%= image_tag 'logo/ruby.png', class:"" %>
+          <% when "RoR" %>
+          <%= image_tag 'logo/rails.png', class:"" %>
+          <% when 'Python' %>
+          <%= image_tag 'logo/python.png', class:""  %>
+          <% when 'Node' %>
+          <%= image_tag 'logo/node.png', class:"" %>
+          <% when 'HTML'  %>
+          <%= image_tag 'logo/html.png', class:"" %>
+          <% when 'CSS' %>
+          <%= image_tag 'logo/css.png', class:"" %>
+          <% when 'jQuery'%>
+          <%= image_tag 'logo/jquery.png', class:"" %>
           <% else %>
+          <%= image_tag 'logo/default.png', class:"" %>
           <% end %>
+
         </div>
         <div class="col-sm-9">
-          <h3>  <%= link_to f.category, drill_group_path(f) %></h3>
+          <h3>  <%= truncate(f.category.upcase, length: 20) %></h3>
           <!-- <h3>  <%= f.category %> </h3> -->
           <p> Difficulty: <%= f.difficulty %> </p>
           <p>  <%= f.description %> </p>
+          <p> progess: <%= percent_complete(f, current_user) %>%</p>
 
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width: <%= percent_complete(f, current_user)%>%">
+              <span class="sr-only"><%= percent_complete(f, current_user) %>% Complete</span>
+            </div>
+          </div>
           <!-- <h3>Ruby on Rails</h3>
           <p>Here you will learn ruby on rails</p>
           <p>description goes here</p> -->
-          <button type="button" class="btn btn-default red-button">Enter</button>
+          <%= link_to 'Enter', drill_group_path(f), class: 'btn btn-default red-button' %>
         </div>
       </div>
     </div>
   <% end %>
-
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 drill-group-spacing">
-    <div class="drill-group">
-      <div class="col-sm-3">
-        <%= image_tag 'logo/ruby.gif', class:"" %>
-      </div>
-      <div class="col-sm-9">
-        <h3>Ruby on Rails</h3>
-        <p>Here you will learn ruby on rails</p>
-        <p>description goes here</p>
-        <button type="button" class="btn btn-default red-button">Enter</button>
-      </div>
-    </div>
-  </div>
 
 
 </div>

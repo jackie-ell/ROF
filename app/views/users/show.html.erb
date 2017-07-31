@@ -1,0 +1,50 @@
+<div class="container top-page-padding">
+  <div>
+    <h1><%= @user.username %></h1>
+  </div>
+
+  <div>
+    <p>Full Name: <%= @user.first_name %> <%= @user.last_name %></p>
+  </div>
+
+  <div>
+    <p>Points: <%= @user.total_pts %></p>
+  </div>
+
+  <h2>Your Drill Groups:</h2>
+  <% if @users_question.present? %>
+    <% @users_question.each do |attempt| %>
+
+
+      <div class="col-md-12 drill-group-spacing">
+        <div class="drill-group">
+
+          <div class="col-sm-8">
+            <h3><%= attempt.question.drill_group.description %></h3>
+            <p>Question Description: <%= attempt.question.description %></p>
+            <p>Last Answer Attempt: <%= attempt.last_answer %></p>
+            <p>Question Points: <%= attempt.question.points %></p>
+
+          </div>
+
+
+          <div class="col-sm-2">
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <% end %>
+  <% end %>
+
+</div>
