@@ -26,7 +26,9 @@ class DrillGroupsController < ApplicationController
   def show
     @questions = Question.where(drill_group_id: params[:id])
     @drillgroup = DrillGroup.find params[:id]
+
     @logocat = (@drillgroup.category).to_s.split.first
+
   end
 
 
