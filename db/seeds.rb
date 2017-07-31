@@ -22,7 +22,7 @@ User.create first_name:'Jacky', last_name:'Chui', username:'jchui', email:'jcui@
 User.create first_name:'Colin', last_name:'Hire', username:'chire', email:'colin@hire.ca', password: "hello", is_admin:true, total_pts: rand(1..1000)
 
 #setting non-admin users
-10.times do
+rand(40..150).times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   username = (first_name[0] + last_name).downcase
