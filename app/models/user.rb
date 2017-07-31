@@ -33,8 +33,8 @@ class User < ApplicationRecord
   end
 
   def set_defaults
-    self.total_pts = 0
-    self.is_admin = false
+    self.total_pts ||= 0
+    self.is_admin ||= false
   end
 
 end
