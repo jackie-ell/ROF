@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   has_many :badges, dependent: :destroy
 
-  has_many :drills, dependent: :nullify
-
   has_many :questions
   has_many :user_badges, dependent: :destroy
   #has_many :answers, optional: true  #admin only
