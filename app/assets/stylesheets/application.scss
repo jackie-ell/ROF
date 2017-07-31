@@ -25,6 +25,10 @@ body {
   min-height: 100vh;
 }
 
+input::placeholder {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 
  .fa {
    color: #D12834;
@@ -71,10 +75,6 @@ button {
   font-family: 'Montserrat', sans-serif !important;
 }
 
-h3 {
-  font-family: 'Montserrat', sans-serif !important;
-}
-
 footer {
   margin-top: 3em;
 }
@@ -108,6 +108,12 @@ h2 {
   letter-spacing: 3px !important;
 }
 
+
+h3 {
+  font-family: 'Montserrat', sans-serif !important;
+  color: #D12834 !important;
+}
+
 h4 {
   color: #FFFFFF !important;
   font-family: 'Montserrat', sans-serif !important;
@@ -122,6 +128,8 @@ p {
   letter-spacing: 1px;
   font-weight: 500;
 }
+
+
 
 .top-button-margin {
   margin: 1.5em 0;
@@ -151,7 +159,7 @@ p {
 
 .nav-selections {
   transition: all 0.5s;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
   margin-right: 2.5em;
 }
 
@@ -224,6 +232,26 @@ p {
   border-radius: 0;
   border: 0;
 }
+
+.drill-group {
+  img {
+    margin-top: 0.5em;
+  }
+
+  h3{
+    // margin-top:1em;
+  }
+}
+
+@media (max-width: 1400px) {
+  h3 {
+    font-size: 18px;
+  }
+
+  .drill-group p {
+    font-size: 14px !important;
+  }
+}
 @media (max-width: 1000px) {
   .footer {
     position: static;
@@ -270,6 +298,8 @@ p {
       .navbar-collapse {
           border-top: 1px solid transparent;
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+          // box-shadow: 1px 1px 10px #888888;
+
       }
       .navbar-fixed-top {
           top: 0;
@@ -281,6 +311,8 @@ p {
       .navbar-nav {
           float: none!important;
           margin-top: 7.5px;
+          padding-bottom: 1em;
+
       }
       .navbar-nav>li {
           float: none;
@@ -292,4 +324,16 @@ p {
       .collapse.in{
           display:block !important;
       }
+}
+
+@media (max-width: 770px) {
+  .form-group {
+    margin-right: 0;
+    margin-top: 1em;
+  }
+
+  .signin-button {
+    margin-top: 1em;
+    width: 100%;
+  }
 }
