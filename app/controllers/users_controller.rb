@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def leaderboard
     @users = User.order(total_pts: :desc)
+    @rank = 0
   end
 
   def show
