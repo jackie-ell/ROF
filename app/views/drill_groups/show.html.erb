@@ -1,10 +1,8 @@
 
 <div class='container top-page-padding'>
   <div class="title-container">
-    <h1 class="drillgrouptitle"><%= @drillgroup.category.titleize %> | <%= @drillgroup.difficulty.capitalize %></h1>
-    <% if current_user.is_admin %>
-      <%= link_to 'Add New Question', new_drill_group_question_path(@drillgroup) , class: "btn btn-default red-button top-button-margin" %>
-    <% end %>
+    <h1><%= @drillgroup.category.titleize %> | <%= @drillgroup.difficulty.capitalize %></h1>
+    <%= link_to 'Add New Question', new_drill_group_question_path(@drillgroup) , class: "btn btn-default red-button top-button-margin" %>
   </div>
 <% @questions.each do |f| %>
   <div class="col-md-12 drill-group-spacing">
@@ -33,7 +31,7 @@
       </div>
 
       <div class="col-sm-8">
-        <p><%= f.title %></p>
+
         <h3>  <%= f.description %> </h3>
         <p>Points: <%= f.points %> </p>
 
