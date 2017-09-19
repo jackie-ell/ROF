@@ -84,3 +84,23 @@ added validations to user.rb
 rails g model drill name user:references drill_group:references points:integer
 
 added validations to all rbs
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/1.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/2.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/3.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/4.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/5.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/6.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/7.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/8.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/9.png)
+
+![JSON](https://raw.githubusercontent.com/jackie-ell/ROF/master/public/images/10.png)
